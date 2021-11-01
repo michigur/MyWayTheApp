@@ -81,5 +81,36 @@ namespace MyWayAPP.Services
 
         public string GetBasePhotoUri() { return this.basePhotosUri; }
 
+
+
+        public async Task<Client> LoginAsync(string email, string pass)
+        {
+
+            try
+            {
+                HttpResponseMessage response = await this.client.GetAsync($"{this.baseUri}/Login?email={email}&pass={pass}");
+                if (response.IsSuccessStatusCode)
+                {
+                    JsonSerializerOptions options = new JsonSerializerOptions
+                    {
+                        ReferenceHandler = ReferenceHandler.Preserve, //avoid reference loops!
+                        PropertyNameCaseInsensitive = true
+                    };
+                    string content = await response.Content.ReadAsStringAsync();
+                    Client u = JsonSerializer.Deserialize<Client>(content, options);
+                    return u;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
+
     }
 }
