@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using MyWayAPP.ViewModels;
 
 namespace MyWayAPP.Views
 {
@@ -14,6 +15,8 @@ namespace MyWayAPP.Views
     {
         public LogInPage()
         {
+            LogInViewModel context = new LogInViewModel();
+            this.BindingContext = context;
             InitializeComponent();
         }
     }
