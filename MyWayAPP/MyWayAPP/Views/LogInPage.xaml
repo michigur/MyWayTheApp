@@ -6,11 +6,7 @@
         <ScrollView>
             <StackLayout BackgroundColor="#e6e6e6">
                 <Grid>
-                    <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
-                        <Frame HeightRequest="150" BackgroundColor="#00c7a8"  Padding="0" Margin="0">
-                            <Image Source="loginback.jpg" Aspect="Fill"  Margin="0" />
-                        </Frame>
-                    </StackLayout>
+                   
                     <StackLayout Padding="0" Margin="10,100,10,0" HorizontalOptions="FillAndExpand">
                         <Frame  BackgroundColor="White" HeightRequest="500" HasShadow="True" Padding="0" Margin="0">
 

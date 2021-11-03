@@ -13,7 +13,7 @@ namespace MyWayAPP
         {
             get
             {
-                return true; //change this before release!
+                return false; //change this before release!
             }
         }
 

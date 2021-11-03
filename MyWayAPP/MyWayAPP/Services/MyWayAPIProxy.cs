@@ -16,14 +16,14 @@ namespace MyWayAPP.Services
 {
     class MyWayAPIProxy
     {
-        private const string CLOUD_URL = "TBD"; //API url when going on the cloud
-        private const string CLOUD_PHOTOS_URL = "TBD";
-        private const string DEV_ANDROID_EMULATOR_URL = "http://10.0.2.2:21604/contactsAPI"; //API url when using emulator on android
-        private const string DEV_ANDROID_PHYSICAL_URL = "http://192.168.1.14:21604/contactsAPI"; //API url when using physucal device on android
-        private const string DEV_WINDOWS_URL = "https://localhost:44331/contactsAPI"; //API url when using windoes on development
-        private const string DEV_ANDROID_EMULATOR_PHOTOS_URL = "http://10.0.2.2:21604/Images/"; //API url when using emulator on android
-        private const string DEV_ANDROID_PHYSICAL_PHOTOS_URL = "http://192.168.1.14:21604/Images/"; //API url when using physucal device on android
-        private const string DEV_WINDOWS_PHOTOS_URL = "https://localhost:44331/Images/"; //API url when using windoes on development
+        private const string CLOUD_URL = "http://10.0.2.2:9380/mywayAPI"; //API url when going on the cloud
+        private const string CLOUD_PHOTOS_URL = "http://10.0.2.2:9380/Images/";
+        private const string DEV_ANDROID_EMULATOR_URL = "http://10.0.2.2:9380/mywayAPI"; //API url when using emulator on android
+        private const string DEV_ANDROID_PHYSICAL_URL = "http://192.168.1.14:9380/mywayAPI"; //API url when using physucal device on android
+        private const string DEV_WINDOWS_URL = "https://localhost:44312/mywayAPI"; //API url when using windoes on development
+        private const string DEV_ANDROID_EMULATOR_PHOTOS_URL = "http://10.0.2.2:9380/Images/"; //API url when using emulator on android
+        private const string DEV_ANDROID_PHYSICAL_PHOTOS_URL = "http://192.168.1.14:9380/Images/"; //API url when using physucal device on android
+        private const string DEV_WINDOWS_PHOTOS_URL = "https://localhost:44312/Images/"; //API url when using windoes on development
 
         private HttpClient client;
         private string baseUri;

@@ -58,7 +58,7 @@ namespace MyWayAPP.ViewModels
             Client user = await proxy.LoginAsync(Email, Password);
             if (user == null)
             {
-                await App.Current.MainPage.DisplayAlert("Error", "Login failed, please check username and password and try again", "OK");
+                await App.Current.MainPage.DisplayAlert("Error", "Login failed, please check Email and password and try again", "OK");
             }
             else
             {
