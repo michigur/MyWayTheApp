@@ -19,9 +19,10 @@ namespace MyWayAPP.Models
         public DateTime ClientsBirthDay { get; set; }
         public string ClientsUsername { get; set; }
         public string ClientsPassword { get; set; }
-        public byte[] ClientCreditCardNumber { get; set; }
+        public string ClientCreditCardNumber { get; set; }
         public DateTime ClientCreditCardDate { get; set; }
         public int? ClientCreditCardCvv { get; set; }
+        public string ClientCurrentLocation { get; set; }
 
         public virtual List<RoutteCar> RoutteCars { get; set; }
     }
