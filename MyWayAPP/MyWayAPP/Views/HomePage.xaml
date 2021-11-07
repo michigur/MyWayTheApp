@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyWayAPP.Views.HomePage">
+    <ContentPage.Content >
+        <StackLayout BackgroundColor="#e6e6e6">
+
+            <Grid>
+                <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+                    <Frame HeightRequest="150" BackgroundColor="#40bfae" Padding="0" Margin="0">
+                        <Image Source="signunbackground.jpg"  Margin="0" Aspect="AspectFit" />
+                    </Frame>
+                </StackLayout>
+                <StackLayout Padding="0" Margin="10,100,10,0" HorizontalOptions="FillAndExpand">
+                    <Frame  BackgroundColor="White" HeightRequest="500" HasShadow="True" Padding="0" Margin="0">
+
+                        <StackLayout>
+
+
+                            <StackLayout Margin="10">
+                                <Label Text="Home Page" TextColor="Black" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="50"/>
+                            </StackLayout>
+                            <ScrollView>
+                                <StackLayout Padding="0" Margin="15,10">
+
+
+                                    <Button Text="Log In" Command="{Binding NevigateToLogIn}"  BorderRadius="6" Margin="15" FontSize="17" FontAttributes="Bold" HeightRequest="40" WidthRequest="200" TextColor="White" BackgroundColor="#2FA999"></Button>
+                                    <Button Text="Sign Up" Command="{Binding NevigateToSignUp}" BorderRadius="6" Margin="15" FontSize="17" FontAttributes="Bold" HeightRequest="40" WidthRequest="200" TextColor="White" BackgroundColor="MediumPurple"></Button>
+
+                                </StackLayout>
+
+                            </ScrollView>
+
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

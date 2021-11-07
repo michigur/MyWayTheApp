@@ -28,7 +28,7 @@ namespace MyWayAPP
         {
             InitializeComponent();
 
-            MainPage = new Register();
+            MainPage = new HomePage();
         }
 
         protected override void OnStart()
