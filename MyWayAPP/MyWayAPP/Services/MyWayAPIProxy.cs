@@ -138,7 +138,7 @@ namespace MyWayAPP.Services
                     return false;
                 }
             }
-            catch (Exception e)
+            catch (Exception e) 
             {
                 Console.WriteLine(e.Message);
                 return false;
