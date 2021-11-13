@@ -45,7 +45,7 @@ namespace MyWayAPP.ViewModels
             {
                 firstName = value;
                 ValidateEmail();
-                OnPropertyChanged("Email");
+                OnPropertyChanged("FirstName");
             }
         }
 
@@ -58,22 +58,12 @@ namespace MyWayAPP.ViewModels
             {
                 lastName = value;
                 ValidateEmail();
-                OnPropertyChanged("Email");
+                OnPropertyChanged("LastName");
             }
         }
 
 
-        private string userName;
-        public string UserName
-        {
-            get { return userName; }
-            set
-            {
-                userName = value;
-                ValidateEmail();
-                OnPropertyChanged("Email");
-            }
-        } 
+       
 
 
         private string password;
@@ -134,7 +124,20 @@ namespace MyWayAPP.ViewModels
                 OnPropertyChanged("CreditNum");
             }
         }
-        
+
+
+        private String gender;
+        public String Gender
+        {
+            get { return gender; }
+            set
+            {
+                gender = value;
+                OnPropertyChanged("Gender");
+            }
+        }
+
+
         private DateTime birthDate;
         public DateTime BirthDate
         {
@@ -276,6 +279,129 @@ namespace MyWayAPP.ViewModels
             }
         }
 
+
+
+        private bool showGenderError;
+
+        public bool ShowGenderError
+        {
+            get => showGenderError;
+            set
+            {
+                showGenderError = value;
+                OnPropertyChanged("ShowGenderError");
+            }
+        }
+
+        private string genderError;
+
+        public string GenderError
+        {
+            get => genderError;
+            set
+            {
+                genderError = value;
+                OnPropertyChanged("GenderError");
+            }
+        }
+
+        private void ValidateGender()
+        {
+            ShowGenderError = false;
+
+
+            if (string.IsNullOrEmpty(Gender))
+            {
+                GenderError = "Gender cannot be blank";
+                ShowGenderError = true;
+            }
+        }
+
+
+
+
+
+
+        private bool showfirstNameError;
+
+        public bool ShowFirstNameError
+        {
+            get => showfirstNameError;
+            set
+            {
+                showfirstNameError = value;
+                OnPropertyChanged("showfirstNameError");
+            }
+        }
+
+        private string firstNameError;
+
+        public string FirstNameError
+        {
+            get => firstNameError;
+            set
+            {
+                firstNameError = value;
+                OnPropertyChanged("firstNameError");
+            }
+        }
+
+        private void ValidateFirstName()
+        {
+            ShowFirstNameError = false;
+
+
+            if (string.IsNullOrEmpty(FirstName))
+            {
+                FirstNameError = "First Name cannot be blank";
+                ShowFirstNameError = true;
+            }
+        }
+
+
+
+
+
+        private bool showlastNameError;
+
+        public bool ShowLastNameError
+        {
+            get => showlastNameError;
+            set
+            {
+                showlastNameError = value;
+                OnPropertyChanged("showlastNameError");
+            }
+        }
+
+        private string lastNameError;
+
+        public string LastNameError
+        {
+            get => lastNameError;
+            set
+            {
+                lastNameError = value;
+                OnPropertyChanged("lastNameError");
+            }
+        }
+
+        private void ValidateLastName()
+        {
+            ShowLastNameError = false;
+
+
+            if (string.IsNullOrEmpty(LastName))
+            {
+                LastNameError = "Last Name cannot be blank";
+                ShowLastNameError = true;
+            }
+        }
+
+
+
+
+
         private bool showAgeError;
 
         public bool ShowAgeError
@@ -410,6 +536,9 @@ namespace MyWayAPP.ViewModels
                 MyWayAPIProxy proxy = MyWayAPIProxy.CreateProxy();
                 Client u = new Client
                 {
+                    ClientName = FirstName,
+                    ClientsLastName = LastName,
+                    ClientsGenedr = Gender,
                     ClientsEmail = Email,
                     ClientsPassword = Password,
                     ClientsUsername = Username,
