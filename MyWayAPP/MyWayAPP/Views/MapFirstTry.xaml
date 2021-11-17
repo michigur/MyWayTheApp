@@ -4,10 +4,10 @@
              x:Class="MyWayAPP.Views.MapFirstTry">
     <ContentPage.Content>
         <StackLayout>
-            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Frame BackgroundColor="#CAA2FF" Padding="24" CornerRadius="0">
                 <Label Text="Maps Sample!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
             </Frame>
-            <maps:Map IsShowingUser="False" />
+            <maps:Map IsShowingUser="False" MapType="Hybrid"  />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
