@@ -7,7 +7,7 @@
             <Frame BackgroundColor="#CAA2FF" Padding="24" CornerRadius="0">
                 <Label Text="Maps Sample!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
             </Frame>
-            <maps:Map IsShowingUser="False" MapType="Hybrid"  />
+            <maps:Map  x:Name="myMap"  IsShowingUser="False" MapType="Hybrid" MapClicked="Map_MapClicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
