@@ -1,15 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="MyWayAPP.Views.Page1">
-    <ContentPage.Content>
-        <StackLayout>
-           
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"
-                   TextColor="Red"
-                   FontSize="Header"/>
-        </StackLayout> 
-    </ContentPage.Content>
+
+    <xct:TabView TabStripPlacement="Bottom" TabStripHeight="100">
+        <xct:TabViewItem Text="Page 1" BackgroundColor="LightSeaGreen" TextColor="White" TextColorSelected="White" BadgeTextColor="White">
+            <xct:TabViewItem.Content>
+                <StackLayout>
+                    <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                        <Label Text="TabView Sample" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+                    </Frame>
+                    
+                </StackLayout>
+            </xct:TabViewItem.Content>
+        </xct:TabViewItem>
+        
+        
+        <xct:TabViewItem Text="Page2" TextColor="White" BackgroundColor="LightBlue" TextColorSelected="White" >
+            
+            <xct:TabViewItem>
+                <StackLayout>
+                    <Frame BackgroundColor="Red" Padding="15" CornerRadius="0">
+                        <Label Text="TabView Sample" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+                    </Frame>
+                    
+                </StackLayout>
+            </xct:TabViewItem>
+        </xct:TabViewItem>
+
+        <xct:TabViewItem Text="Map page" TextColor="White" BackgroundColor="LightPink" TextColorSelected="Green" TapCommand="{Binding SubmitCommand}" >
+
+            <xct:TabViewItem>
+                <StackLayout>
+                    <Frame BackgroundColor="Red" Padding="15" CornerRadius="0">
+                        <Label Text="TabView Sample" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+                    </Frame>
+
+                </StackLayout>
+            </xct:TabViewItem>
+        </xct:TabViewItem>
+    </xct:TabView>
+
 </ContentPage>

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using MyWayAPP.ViewModels;
 
 namespace MyWayAPP.Views
 {
@@ -14,6 +15,8 @@ namespace MyWayAPP.Views
     {
         public Page1()
         {
+            TabPageSampleViewModel context = new TabPageSampleViewModel();
+            this.BindingContext = context;
             InitializeComponent();
         }
     }
