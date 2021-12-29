@@ -25,17 +25,17 @@ namespace MyWayAPP.ViewModels
 
 
         public ICommand SubmitCommand { protected set; get; }
-        public TabPageSampleViewModel()
-        {
-            SubmitCommand = new Command(OnSubmit2);
-        }
+        //public TabPageSampleViewModel()
+        //{
+        //    SubmitCommand = new Command(OnSubmit2);
+        //}
 
-        public async void OnSubmit2()
-        {
-           
-                Page p = new MapFirstTry();
-                App.Current.MainPage = p;
+        //public async void OnSubmit2()
+        //{
+            
+        //    Page p = new MapFirstTry();
+        //        App.Current.MainPage = p;
 
-        }
+        //}
     }
 }

@@ -44,7 +44,7 @@ namespace MyWayAPP.ViewModels
             set
             {
                 firstName = value;
-                ValidateEmail();
+                ValidateFirstName();
                 OnPropertyChanged("FirstName");
             }
         }
@@ -57,7 +57,7 @@ namespace MyWayAPP.ViewModels
             set
             {
                 lastName = value;
-                ValidateEmail();
+                ValidateLastName();
                 OnPropertyChanged("LastName");
             }
         }
@@ -513,7 +513,10 @@ namespace MyWayAPP.ViewModels
 
         private bool ValidateForm()
         {
- 
+            ValidateCardDate();
+            ValidateGender();
+            ValidateLastName();
+            ValidateFirstName();
             ValidatePassword();
             ValidateUsername();
             ValidateAge();
