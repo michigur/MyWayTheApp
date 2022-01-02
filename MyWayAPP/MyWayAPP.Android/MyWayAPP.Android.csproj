@@ -95,13 +95,25 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\drawable\" />
+    <AndroidResource Include="Resources\drawable\accountOutline.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyWayAPP\MyWayAPP.csproj">
       <Project>{18FCFB40-72DA-4973-952A-2B5A69C97D6B}</Project>
       <Name>MyWayAPP</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\history.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\carHatchback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\menu.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

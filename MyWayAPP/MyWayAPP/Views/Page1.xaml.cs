@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MyWayAPP.ViewModels;
 
+
 namespace MyWayAPP.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
