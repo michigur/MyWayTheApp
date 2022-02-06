@@ -27,8 +27,8 @@ namespace MyWayAPP
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MapFirstTry();
+            Device.SetFlags(new[] { "MediaElement_Experimental", "Brush_Experimental" });
+            MainPage = new LandingPage();
         }
 
         protected override void OnStart()
