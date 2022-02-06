@@ -4,22 +4,15 @@
                xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="MyWayAPP.Views.MapFirstTry">
     <ContentPage.Content>
-      <!-- <StackLayout>
-            <Frame BackgroundColor="#CAA2FF" Padding="24" CornerRadius="0">
+       <StackLayout>
+            <Frame BackgroundColor="#221F33" Padding="20" CornerRadius="0">
                 <Label Text="Maps Sample!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
             </Frame>
             <maps:Map  x:Name="myMap"  IsShowingUser="False" MapType="Hybrid" MapClicked="Map_MapClicked" />
-        </StackLayout>-->
+        </StackLayout>
 
  
-        <StackLayout>
-            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-                <Label Text="Essentials Maps Sample" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-            </Frame>
-            
-            <Button Text="Open Directions" Clicked="Button_Clicked1" />
-          
-        </StackLayout>
+       
 
 
     </ContentPage.Content>
