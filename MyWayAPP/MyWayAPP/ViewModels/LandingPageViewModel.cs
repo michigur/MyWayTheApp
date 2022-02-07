@@ -49,9 +49,9 @@ namespace MyWayAPP.ViewModels
         {
             return new List<Onboarding>
             {
-                new Onboarding {Heading ="sample heading", Caption="sample caption"},
-                 new Onboarding {Heading ="sample heading2", Caption="sample caption2"},
-                  new Onboarding {Heading ="sample heading3", Caption="sample caption3"}
+                new Onboarding {Heading ="Welcome to MyWay!", Caption="your private ride"},
+                 new Onboarding {Heading ="We use autonomic cars", Caption="to give you the safest ride"},
+                  new Onboarding {Heading ="Let's begin!", Caption="start your journey by signing up"}
             };
         }
 

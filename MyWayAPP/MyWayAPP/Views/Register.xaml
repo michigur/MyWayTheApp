@@ -3,101 +3,102 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyWayAPP.Views.Register">
     <ContentPage.Content >
-        <StackLayout BackgroundColor="#e6e6e6">
+        <StackLayout BackgroundColor="#202020">
 
             <Grid>
                 <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
-                    <Frame HeightRequest="150" BackgroundColor="#40bfae" Padding="0" Margin="0">
+                    <Image Source="logoOnly.png" />
+                    <Frame HeightRequest="150" BackgroundColor="#202020" Padding="0" Margin="0">
                         <Image Source="signunbackground.jpg"  Margin="0" Aspect="AspectFit" />
                     </Frame>
                 </StackLayout>
                 <StackLayout Padding="0" Margin="10,100,10,0" HorizontalOptions="FillAndExpand">
-                    <Frame  BackgroundColor="White" HeightRequest="500" HasShadow="True" Padding="0" Margin="0">
+                    <Frame  BackgroundColor="Transparent" HeightRequest="500" HasShadow="True" Padding="0" Margin="0">
 
                         <StackLayout>
 
 
-                            <StackLayout Margin="10">
-                                <Label Text="SIGN UP!" TextColor="Black" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="50"/>
+                            <StackLayout Margin="50">
+                                <Label Text="SIGN UP!" TextColor="White" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="50"/>
                             </StackLayout>
                             <ScrollView>
                                 <StackLayout Padding="0" Margin="15,10">
 
                                     <Label Text="{Binding firstNameError}" TextColor="Red" IsVisible="{Binding showfirstNameError}" />
-                                    <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                                    <Frame BackgroundColor="Transparent" BorderColor="White" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                                         <StackLayout Orientation="Horizontal">
-                                            <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                                            <Frame BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
                                                 <Image Source="profile.png" Aspect="AspectFill" Margin="0"/>
                                             </Frame>
 
-                                            <Entry Placeholder="First Name" Text="{Binding FirstName}" TextColor="#7C97F8" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                            <Entry Placeholder="First Name" TextColor="White" Text="{Binding FirstName}"  FontAttributes="Bold" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                                         </StackLayout>
                                     </Frame>
 
 
                                     <Label Text="{Binding lastNameError}" TextColor="Red" IsVisible="{Binding showlastNameError}" />
-                                    <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                                    <Frame BackgroundColor="Transparent" BorderColor="White" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                                         <StackLayout Orientation="Horizontal">
-                                            <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                                            <Frame BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
                                                 <Image Source="profile.png" Aspect="AspectFill" Margin="0"/>
                                             </Frame>
 
-                                            <Entry Placeholder="Last Name" Text="{Binding LastName}" TextColor="#7C97F8" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                            <Entry Placeholder="Last Name" Text="{Binding LastName}" TextColor="White" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                                         </StackLayout>
                                     </Frame>
 
 
                                     <Label Text="{Binding EmailError}" TextColor="Red" IsVisible="{Binding ShowEmailError}" />
 
-                                    <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                                    <Frame BackgroundColor="Transparent" BorderColor="White" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                                         <StackLayout Orientation="Horizontal">
-                                            <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                                            <Frame BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
                                                 <Image Source="email.jpg" Aspect="AspectFill" Margin="0"/>
                                             </Frame>
 
-                                            <Entry Placeholder="Email" Keyboard="Email"  Text="{Binding Email}" TextColor="#7C97F8" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                            <Entry Placeholder="Email" Keyboard="Email"  Text="{Binding Email}" TextColor="White" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                                         </StackLayout>
                                     </Frame>
                                     <Label Text="{Binding PasswordError}" TextColor="Red" IsVisible="{Binding ShowPasswordError}" />
 
-                                    <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                                    <Frame BackgroundColor="Transparent" BorderColor="White" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                                         <StackLayout Orientation="Horizontal">
-                                            <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                                            <Frame BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
                                                 <Image Source="lockicon.jpg" Aspect="AspectFill" Margin="0"/>
                                             </Frame>
 
-                                            <Entry Placeholder="Password" Text="{Binding Password}" IsPassword="True" TextColor="#7C97F8" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                            <Entry Placeholder="Password" Text="{Binding Password}" IsPassword="True" TextColor="White" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                                         </StackLayout>
                                     </Frame>
                                     <Label Text="{Binding UsernameError}" TextColor="Red" IsVisible="{Binding ShowUsernameError}" />
 
-                                    <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                                    <Frame BackgroundColor="Transparent" BorderColor="White" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                                         <StackLayout Orientation="Horizontal">
-                                            <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                                            <Frame BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
                                                 <Image Source="profile.png" Aspect="AspectFill" Margin="0"/>
                                             </Frame>
 
-                                            <Entry Placeholder="UserName" Text="{Binding Username}" TextColor="#7C97F8" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                            <Entry Placeholder="UserName" Text="{Binding Username}" TextColor="White" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                                         </StackLayout>
                                     </Frame>
                                     <Label Text="{Binding GenderError}" TextColor="Red" IsVisible="{Binding ShowGenderError}" />
-                                    <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                                    <Frame BackgroundColor="Transparent" BorderColor="White" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                                         <StackLayout Orientation="Horizontal">
-                                            <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                                            <Frame BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
                                                 <Image Source="profile.png" Aspect="AspectFill" Margin="0"/>
                                             </Frame>
 
-                                            <Entry Placeholder="Gender" Text="{Binding Gender}" TextColor="#7C97F8" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                            <Entry Placeholder="Gender" Text="{Binding Gender}" TextColor="White" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                                         </StackLayout>
                                     </Frame>
 
 
-                                    <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                                    <Frame BackgroundColor="Transparent" BorderColor="White" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                                         <StackLayout Orientation="Horizontal">
-                                            <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                                            <Frame BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
                                                 <Image Source="location.png" Aspect="AspectFill" Margin="0"/>
                                             </Frame>
-                                            <Entry Placeholder="Address" IsPassword="True" TextColor="#7C97F8" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                            <Entry Placeholder="Address" IsPassword="True" TextColor="White" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                                         </StackLayout>
 
                                     </Frame>
@@ -105,32 +106,32 @@
                                     <Label Text="{Binding AgeError}" TextColor="Red" IsVisible="{Binding ShowAgeError}" />
                                     <DatePicker Date="{Binding BirthDate}"></DatePicker>
 
-                                    <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                                    <Frame BackgroundColor="Transparent" BorderColor="White" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                                         <StackLayout Orientation="Horizontal">
-                                            <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                                            <Frame BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
                                                 <Image Source="creditCard.png" Aspect="AspectFill" Margin="0"/>
                                             </Frame>
 
-                                            <Entry Placeholder="Credit-Number" Keyboard="Numeric" IsPassword="True" TextColor="#7C97F8" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                            <Entry Placeholder="Credit-Number" Keyboard="Numeric" IsPassword="True" TextColor="White" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                                         </StackLayout>
                                     </Frame>
                                     <Label Text="Card-Date" FontSize="Large"></Label>
                                     <DatePicker></DatePicker>
                                     <Label Text="{Binding CVVError}" TextColor="Red" IsVisible="{Binding ShowCVVError}" />
-                                    <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                                    <Frame BackgroundColor="Transparent" BorderColor="White" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                                         <StackLayout Orientation="Horizontal">
-                                            <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                                            <Frame BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
                                                 <Image Source="CVV.jpg" Aspect="AspectFill" Margin="0"/>
                                             </Frame>
 
-                                            <Entry Placeholder="CVV" Text="{Binding CVV}" Keyboard="Numeric" TextColor="#7C97F8" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                            <Entry Placeholder="CVV" Text="{Binding CVV}" Keyboard="Numeric" TextColor="White" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                                         </StackLayout>
                                     </Frame>
 
-                                   
 
-                                    <Button Text="SIGN UP" Command="{Binding SubmitCommand}"  BorderRadius="6" Margin="15" FontSize="17" FontAttributes="Bold" HeightRequest="40" WidthRequest="200" TextColor="White" BackgroundColor="#2FA999"></Button>
-                                    <Button Text="TO LOG IN" Command="{Binding NevigateToSignIn}" BorderRadius="6" Margin="15" FontSize="17" FontAttributes="Bold" HeightRequest="40" WidthRequest="200" TextColor="White" BackgroundColor="MediumPurple"></Button>
+
+                                    <Button Text="SIGN UP" Command="{Binding SubmitCommand}"  BorderRadius="6" Margin="15" FontSize="17" FontAttributes="Bold" HeightRequest="40" WidthRequest="200" TextColor="White" BackgroundColor="#bf0603"></Button>
+                                    <Button Text="TO LOG IN" Command="{Binding NevigateToSignIn}" BorderRadius="6" Margin="15" FontSize="17" FontAttributes="Bold" HeightRequest="40" WidthRequest="200" TextColor="#708d81" BackgroundColor="White"></Button>
 
                                 </StackLayout>
 
