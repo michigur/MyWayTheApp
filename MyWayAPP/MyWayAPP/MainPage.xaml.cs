@@ -27,7 +27,6 @@ namespace MyWayAPP
             {
                 new Menu { Title = "PROFILE", Icon = "accountOutline.png" },
                 new Menu { Title = "ROUTE", Icon = "carHatchback.png" },
-                new Menu { Title = "HISTORY", Icon = "history.png" },
                 new Menu { Title = "SIGN OUT", Icon = "logout.png" }
             };
         }
