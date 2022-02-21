@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Xamarin.Forms.GoogleMaps;
+using Xamarin.Forms.Maps;
 
-namespace TrackingSample.Helpers
+namespace MyWayAPP.Helpers
 {
     public static class PolylineHelper
     {
