@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyWayAPP.Views.ProfilePage">
+    <StackLayout BackgroundColor="#2d2f31">
+        <Image Source="logoClean.png"  Margin="0,65,0,0"/>
+        <Frame  HasShadow="False" CornerRadius="40" Margin="0,-280,0,0" VerticalOptions="FillAndExpand" BackgroundColor="#fdf0d5">
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,*,*">
+                <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Text="name" FontSize="35" FontAttributes="Bold" Padding="20,10,0,0"/>
+                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Padding="20,40,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="User Name:" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+                            <Span Text="MyUserName" TextColor="#2d2f31" FontSize="18"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Padding="20,15,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Email:" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+                            <Span Text="email@gmail.com" TextColor="#2d2f31" FontSize="18"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Padding="20,15,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Birthday:" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+                            <Span Text="00.00.0000" TextColor="#2d2f31" FontSize="18"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Padding="20,15,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Gender:" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+                            <Span Text="Female" TextColor="#2d2f31" FontSize="18"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3"  VerticalOptions="End"  BackgroundColor="#bf0603" Text="Update" FontSize="15" TextColor="White" CornerRadius="30"  Margin="16"  />
+            </Grid>
+        </Frame>
+    </StackLayout>
+</ContentPage>
