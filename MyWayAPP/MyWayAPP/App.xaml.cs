@@ -17,7 +17,7 @@ namespace MyWayAPP
     }
 
     public partial class App : Application
-    {
+    { 
         public static bool IsDevEnv
         {
             get
