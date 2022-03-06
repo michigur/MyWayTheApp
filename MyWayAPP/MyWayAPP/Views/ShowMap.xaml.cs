@@ -29,10 +29,13 @@ namespace MyWayAPP.Views
             ShowMapViewModel vm = new ShowMapViewModel();
             vm.OnUpdateMapEvent += OnUpdateMap;
             this.BindingContext = vm;
-            this.BindingContext = this;
-            MenuItems = GetMenus();
+            //this.BindingContext = this;
+           // MenuItems = GetMenus();
             InitializeComponent();
         }
+
+
+
 
         public void OnUpdateMap()
         {
@@ -94,44 +97,44 @@ namespace MyWayAPP.Views
         }
 
 
-        public ObservableCollection<Menu> MenuItems { get; set; }
+        //public ObservableCollection<Menu> MenuItems { get; set; }
 
 
-        private ObservableCollection<Menu> GetMenus()
-        {
-            return new ObservableCollection<Menu>
-            {
-                new Menu { Title = "PROFILE", Icon = "accountOutline.png" },
-                new Menu { Title = "ROUTE", Icon = "carHatchback.png" },
-                new Menu { Title = "SIGN OUT", Icon = "logout.png" }
-            };
-        }
+        //private ObservableCollection<Menu> GetMenus()
+        //{
+        //    return new ObservableCollection<Menu>
+        //    {
+        //        new Menu { Title = "PROFILE", Icon = "accountOutline.png" },
+        //        new Menu { Title = "ROUTE", Icon = "carHatchback.png" },
+        //        new Menu { Title = "SIGN OUT", Icon = "logout.png" }
+        //    };
+        //}
 
-        private async void Show()
-        {
+        //private async void Show()
+        //{
 
-            _ = TitleTxt.FadeTo(0);
-            _ = MenuItemsView.FadeTo(1);
-            await MainMenuView.RotateTo(0, 300, Easing.BounceOut);
-        }
+        //    _ = TitleTxt.FadeTo(0);
+        //    _ = MenuItemsView.FadeTo(1);
+        //    await MainMenuView.RotateTo(0, 300, Easing.BounceOut);
+        //}
 
-        private async void Hide()
-        {
-            _ = TitleTxt.FadeTo(1);
-            _ = MenuItemsView.FadeTo(0);
-            await MainMenuView.RotateTo(-90, 300, Easing.BounceOut);
-        }
+        //private async void Hide()
+        //{
+        //    _ = TitleTxt.FadeTo(1);
+        //    _ = MenuItemsView.FadeTo(0);
+        //    await MainMenuView.RotateTo(-90, 300, Easing.BounceOut);
+        //}
 
-        private void ShowMenu(object sender, EventArgs e)
-        {
-            Show();
-        }
+        //private void ShowMenu(object sender, EventArgs e)
+        //{
+        //    Show();
+        //}
 
-        private void MenuTapped(object sender, EventArgs e)
-        {
-            TitleTxt.Text = ((sender as StackLayout).BindingContext as Menu).Title;
-            Hide();
-        }
+        //private void MenuTapped(object sender, EventArgs e)
+        //{
+        //    TitleTxt.Text = ((sender as StackLayout).BindingContext as Menu).Title;
+        //    Hide();
+        //}
 
 
     }

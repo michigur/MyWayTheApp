@@ -4,9 +4,18 @@ using Xamarin.Forms.Xaml;
 using MyWayAPP.Models;
 using MyWayAPP.Views;
 using System.Collections.Generic;
+using MyWayAPP.Services;
 
 namespace MyWayAPP
 {
+    public class Constants
+    {
+        //Generate Google Api Key at: https://console.cloud.google.com/ for Places API, Directions API, Maps SDK For android!
+        //Generate Bing Api Key at: https://www.bingmapsportal.com/
+        public const string GoogleApiKey = "AIzaSyCz8nXSYXgR0nfzko2h6dJlvtYt3M0LFwM";
+        public const string BingApiKey = "YOUR BING API KEY";
+    }
+
     public partial class App : Application
     {
         public static bool IsDevEnv
@@ -27,8 +36,9 @@ namespace MyWayAPP
         public App()
         {
             InitializeComponent();
+            GoogleMapsApiService.Initialize(Constants.GoogleApiKey);
             Device.SetFlags(new[] { "MediaElement_Experimental", "Brush_Experimental" });
-            MainPage = new ProfilePage();
+            MainPage = new ShowMap();
         }
 
         protected override void OnStart()

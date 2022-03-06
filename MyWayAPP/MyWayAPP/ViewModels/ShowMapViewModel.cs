@@ -19,6 +19,10 @@ namespace MyWayAPP.ViewModels
         }
         #endregion
 
+
+       
+       
+
         private string origin;
         public string Origin
         {
@@ -51,12 +55,11 @@ namespace MyWayAPP.ViewModels
             try
             {
                 GoogleMapsApiService service = new GoogleMapsApiService();
-                //find auto complete places first for origin and destination
+               
                 GooglePlaceAutoCompleteResult originPlaces = await service.GetPlaces(Origin);
                 GooglePlaceAutoCompleteResult destPlaces = await service.GetPlaces(Destination);
                 //extract the exact first google place for origin and destination
-                //note that here i am taking the first suggestion but it will be better if you will
-                //ask the user to choose which suggestion is better for him
+                
                 GooglePlace place1 = await service.GetPlaceDetails(originPlaces.AutoCompletePlaces[0].PlaceId);
                 GooglePlace place2 = await service.GetPlaceDetails(destPlaces.AutoCompletePlaces[0].PlaceId);
                 //get directions to move from origin to destination
@@ -71,7 +74,7 @@ namespace MyWayAPP.ViewModels
             }
             catch(Exception e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine("cant find route");
             }
             
             

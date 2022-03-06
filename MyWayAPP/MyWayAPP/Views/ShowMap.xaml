@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps" 
+             xmlns:vm="clr-namespace:MyWayAPP.ViewModels" x:DataType="vm:ShowMapViewModel"
              x:Class="MyWayAPP.Views.ShowMap">
 
     <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
@@ -41,12 +42,12 @@
             <Grid AnchorX="0.08" AnchorY="0.08" Rotation="90">
                 <StackLayout Orientation="Horizontal" Spacing="20">
                     <ImageButton Source="menu.png" BackgroundColor="Transparent" WidthRequest="20" HeightRequest="20" 
-                            VerticalOptions="Start" HorizontalOptions="Center" Margin="0,5,0,0" Clicked="ShowMenu"/>
+                            VerticalOptions="Start" HorizontalOptions="Center" Margin="0,5,0,0" />
                     <Label x:Name="TitleTxt" Text="ACTIVITY" TextColor="White" FontSize="22" FontAttributes="Bold" 
                         HorizontalOptions="Center" VerticalOptions="Start"/>
                 </StackLayout>
             </Grid>
-            <Grid x:Name="MenuItemsView" Grid.Column="1" HorizontalOptions="FillAndExpand" TranslationX="-50" Opacity="0">
+           <!-- <Grid x:Name="MenuItemsView" Grid.Column="1" HorizontalOptions="FillAndExpand" TranslationX="-50" Opacity="0">
                 <StackLayout Margin="0,70,0,0" Spacing="20" BindableLayout.ItemsSource="{Binding MenuItems}">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
@@ -67,7 +68,7 @@
                 <StackLayout Margin="0,220,45,0">
                     <Image Source="logoClean.png" />
                 </StackLayout>
-            </Grid>
+            </Grid>-->
 
 
         </Grid>
