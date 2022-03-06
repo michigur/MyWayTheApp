@@ -52,7 +52,7 @@ namespace MyWayAPP.Views
                 Position = new Position(vm.RouteOrigin.Latitude, vm.RouteOrigin.Longitude),
                 Label = vm.RouteOrigin.Name,
                 Address = ""
-            };
+            }; 
             map.Pins.Add(pin1);
             Pin pin2 = new Pin
             {
