@@ -12,7 +12,7 @@ namespace MyWayAPP
     {
         //Generate Google Api Key at: https://console.cloud.google.com/ for Places API, Directions API, Maps SDK For android!
         //Generate Bing Api Key at: https://www.bingmapsportal.com/
-        public const string GoogleApiKey = "";
+        public const string GoogleApiKey = " ";
         public const string BingApiKey = "YOUR BING API KEY";
     }
 
