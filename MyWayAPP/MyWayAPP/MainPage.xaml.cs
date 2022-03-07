@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using MyWayAPP.Views;
 
 namespace MyWayAPP
 {
@@ -21,13 +22,13 @@ namespace MyWayAPP
         public ObservableCollection<Menu> MenuItems { get; set; }
 
 
-        private ObservableCollection<Menu> GetMenus()
+        public ObservableCollection<Menu> GetMenus()
         {
             return new ObservableCollection<Menu>
             {
-                new Menu { Title = "PROFILE", Icon = "accountOutline.png" },
-                new Menu { Title = "ROUTE", Icon = "carHatchback.png" },
-                new Menu { Title = "SIGN OUT", Icon = "logout.png" }
+                new Menu { Title = "PROFILE", Icon = "accountOutline.png", page = new ProfilePage() },
+                new Menu { Title = "ROUTE", Icon = "carHatchback.png" , page = new ShowMap()},
+                new Menu { Title = "SIGN OUT", Icon = "logout.png", page = new LandingPage() }
             };
         }
 
@@ -56,12 +57,18 @@ namespace MyWayAPP
             TitleTxt.Text = ((sender as StackLayout).BindingContext as Menu).Title;
             Hide();
         }
+        private void GoToPage(object sender, EventArgs e)
+        {
+            ContentPage p = ((sender as StackLayout).BindingContext as Menu).page;
+            Navigation.PushAsync(p);
+        }
     }
 
     public class Menu
     {
         public string Title { get; set; }
         public string Icon { get; set; }
+        public ContentPage page { get; set; }
     }
 }
 

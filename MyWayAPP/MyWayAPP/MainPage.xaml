@@ -1,15 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:vm="clr-namespace:MyWayAPP.ViewModels" x:DataType="vm:MenuViewModel"
              x:Class="MyWayAPP.MainPage">
 
     <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                <Image Source="empty.png" WidthRequest="40" HeightRequest="40" HorizontalOptions="Center"/>
-                <Label Text="No content found" HorizontalOptions="Center"/>
-            </StackLayout>
-        </Grid>
+        
         <Grid x:Name="MainMenuView" ColumnDefinitions="Auto, *" BackgroundColor="#003049" HeightRequest="420" 
               VerticalOptions="Start" AnchorX="0.08" AnchorY="0.08" Rotation="-90">
             <Grid AnchorX="0.08" AnchorY="0.08" Rotation="90">
@@ -26,7 +22,7 @@
                         <DataTemplate>
                             <StackLayout Orientation="Horizontal" Spacing="20">
                                 <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="MenuTapped"/>
+                                    <TapGestureRecognizer Tapped="GoToPage"/>
                                 </StackLayout.GestureRecognizers>
                                 <Image Source="{Binding Icon}" WidthRequest="20" HeightRequest="20" 
                                     VerticalOptions="Center" HorizontalOptions="Start"/>
@@ -42,9 +38,11 @@
                     <Image Source="logoClean.png" />
                 </StackLayout>
             </Grid>
-            
-
+           
         </Grid>
+
+        
     </Grid>
 
+    
 </ContentPage>

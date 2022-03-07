@@ -13,7 +13,7 @@
 
                 <Frame BackgroundColor="#96FFFFFF" BorderColor="White" Margin="15,15,15,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                     <StackLayout Orientation="Horizontal">
-                        <Frame BackgroundColor="Transparent" HeightRequest="35" WidthRequest="30" CornerRadius="30" Padding="0" Margin="5">
+                        <Frame BackgroundColor="Transparent" HeightRequest="0" WidthRequest="25" CornerRadius="30" Padding="0" Margin="5">
                             <Image Source="profile.png" Aspect="AspectFill" Margin="0"/>
                         </Frame>
 
@@ -21,16 +21,16 @@
                     </StackLayout>
                 </Frame>
 
-                <Frame BackgroundColor="#96FFFFFF" BorderColor="White" Margin="15,15,15,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                <Frame BackgroundColor="#96FFFFFF" BorderColor="White" Margin="15,5,15,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                     <StackLayout Orientation="Horizontal">
-                        <Frame BackgroundColor="Transparent" HeightRequest="35" WidthRequest="30" CornerRadius="30" Padding="0" Margin="5">
+                        <Frame BackgroundColor="Transparent" HeightRequest="0" WidthRequest="25" CornerRadius="30" Padding="0" Margin="5">
                             <Image Source="profile.png" Aspect="AspectFill" Margin="0"/>
                         </Frame>
 
                         <Entry  TextColor="White" Text="{Binding Destination}" Placeholder="Destination" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                     </StackLayout>
                 </Frame>
-                <Button Text="Go" Command="{Binding Go}"  BorderRadius="6" Margin="15" FontSize="17" FontAttributes="Bold" HeightRequest="40" WidthRequest="200" TextColor="White" BackgroundColor="#bf0603"></Button>
+                <Button Text=" Let's Go!"   Command="{Binding Go}"  BorderRadius="6" Margin="14" FontSize="15" FontAttributes="Bold" HeightRequest="35" WidthRequest="200" TextColor="White" BackgroundColor="#bf0603"></Button>
                 
                 <maps:Map x:Name="map" IsShowingUser="False" 
                               HorizontalOptions="FillAndExpand"
