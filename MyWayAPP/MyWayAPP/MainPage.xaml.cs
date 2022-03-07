@@ -14,6 +14,7 @@ namespace MyWayAPP
     {
         public MainPage()
         {
+           
             InitializeComponent();
             MenuItems = GetMenus();
             this.BindingContext = this;

@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm ="clr-namespace:MyWayAPP.ViewModels"
-             x:Class="MyWayAPP.Views.LandingPage">
+             x:Class="MyWayAPP.Views.LandingPage"
+              NavigationPage.HasNavigationBar="false">
 
     <ContentPage.BindingContext>
         <vm:LandingPageViewModel/>

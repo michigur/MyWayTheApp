@@ -38,7 +38,8 @@ namespace MyWayAPP
             InitializeComponent();
             GoogleMapsApiService.Initialize(Constants.GoogleApiKey);
             Device.SetFlags(new[] { "MediaElement_Experimental", "Brush_Experimental" });
-            MainPage = new MainPage();
+            Page p = new MainPage();
+            MainPage = new NavigationPage(p);
         }
 
         protected override void OnStart()
