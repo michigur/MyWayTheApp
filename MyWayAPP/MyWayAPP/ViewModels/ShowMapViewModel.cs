@@ -81,5 +81,9 @@ namespace MyWayAPP.ViewModels
         }
 
         public event Action OnUpdateMapEvent;
+
+
+
+
     }
 }
