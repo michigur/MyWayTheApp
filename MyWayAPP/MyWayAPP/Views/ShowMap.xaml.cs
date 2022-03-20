@@ -15,11 +15,11 @@ using MyWayAPP.Models;
 namespace MyWayAPP.Views
 {
 
-    public class Menu
-    {
-        public string Title { get; set; }
-        public string Icon { get; set; }
-    }
+    //public class Menu
+    //{
+    //    public string Title { get; set; }
+    //    public string Icon { get; set; }
+    //}
 
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ShowMap : ContentPage

@@ -4,7 +4,7 @@
                           x:Class="MyWayAPP.MainPage"
              NavigationPage.HasNavigationBar="false">
    
-    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+   <!-- <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         
         <Grid x:Name="MainMenuView" ColumnDefinitions="Auto, *" BackgroundColor="#003049" HeightRequest="420" 
               VerticalOptions="Start" AnchorX="0.08" AnchorY="0.08" Rotation="-90">
@@ -42,7 +42,7 @@
         </Grid>
 
         
-    </Grid>
+    </Grid>-->
 
     
 </ContentPage>

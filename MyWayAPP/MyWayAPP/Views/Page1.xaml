@@ -2,44 +2,47 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             x:Class="MyWayAPP.Views.Page1">
+             x:Class="MyWayAPP.Views.Page1" 
+             NavigationPage.HasNavigationBar="false">
 
-    <xct:TabView TabStripPlacement="Bottom" TabStripHeight="100">
-        <xct:TabViewItem Text="Page 1" BackgroundColor="LightSeaGreen" TextColor="White" TextColorSelected="White" BadgeTextColor="White">
-            <xct:TabViewItem.Content>
-                <StackLayout>
-                    <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-                        <Label Text="TabView Sample" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-                    </Frame>
-                    
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+        <Grid x:Name="MainMenuView" ColumnDefinitions="Auto, *" BackgroundColor="#003049" HeightRequest="420" 
+              VerticalOptions="Start" AnchorX="0.08" AnchorY="0.08" Rotation="-90">
+            <Grid AnchorX="0.08" AnchorY="0.08" Rotation="90">
+                <StackLayout Orientation="Horizontal" Spacing="20">
+                    <ImageButton Source="menu.png" BackgroundColor="Transparent" WidthRequest="20" HeightRequest="20" 
+                            VerticalOptions="Start" HorizontalOptions="Center" Margin="0,5,0,0" Clicked="ShowMenu"/>
+                    <Label x:Name="TitleTxt" Text="ACTIVITY" TextColor="White" FontSize="22" FontAttributes="Bold" 
+                        HorizontalOptions="Center" VerticalOptions="Start"/>
                 </StackLayout>
-            </xct:TabViewItem.Content>
-        </xct:TabViewItem>
-        
-        
-        <xct:TabViewItem Text="Page2" TextColor="White" BackgroundColor="LightBlue" TextColorSelected="White" >
-            
-            <xct:TabViewItem>
-                <StackLayout>
-                    <Frame BackgroundColor="Red" Padding="15" CornerRadius="0">
-                        <Label Text="TabView Sample" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-                    </Frame>
-                    
+            </Grid>
+            <Grid x:Name="MenuItemsView" Grid.Column="1" HorizontalOptions="FillAndExpand" TranslationX="-50" Opacity="0">
+                <StackLayout Margin="0,70,0,0" Spacing="20" BindableLayout.ItemsSource="{Binding MenuItems}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Orientation="Horizontal" Spacing="20">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="GoToPage"/>
+                                </StackLayout.GestureRecognizers>
+                                <Image Source="{Binding Icon}" WidthRequest="20" HeightRequest="20" 
+                                    VerticalOptions="Center" HorizontalOptions="Start"/>
+                                <Label Text="{Binding Title}" TextColor="White" FontSize="22" FontAttributes="Bold" 
+                                    HorizontalOptions="Start" VerticalOptions="Center"/>
+
+
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
                 </StackLayout>
-            </xct:TabViewItem>
-        </xct:TabViewItem>
-
-        <xct:TabViewItem Text="Map page" TextColor="White" BackgroundColor="LightPink" TextColorSelected="Green" TapCommand="{Binding SubmitCommand}" >
-
-            <xct:TabViewItem>
-                <StackLayout>
-                    <Frame BackgroundColor="Red" Padding="15" CornerRadius="0">
-                        <Label Text="TabView Sample" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-                    </Frame>
-
+                <StackLayout Margin="0,220,45,0">
+                    <Image Source="logoClean.png" />
                 </StackLayout>
-            </xct:TabViewItem>
-        </xct:TabViewItem>
-    </xct:TabView>
+            </Grid>
+
+        </Grid>
+
+
+    </Grid>
 
 </ContentPage>
