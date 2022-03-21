@@ -9,7 +9,7 @@
 
     <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <StackLayout BackgroundColor="#003049" >
+            <StackLayout BackgroundColor="#003049">
 
                
 
@@ -32,7 +32,7 @@
                         <Entry  TextColor="White" Text="{Binding Destination}" Placeholder="Destination" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                     </StackLayout>
                 </Frame>
-                <Button Text=" Let's Go!"   Command="{Binding Go}"  BorderRadius="6" Margin="14" FontSize="15" FontAttributes="Bold" HeightRequest="35" WidthRequest="200" TextColor="White" BackgroundColor="#bf0603"></Button>
+                <Button Text=" Let's Go!"   Command="{Binding Go}"  BorderRadius="6" Margin="14" FontSize="15" FontAttributes="Bold" HeightRequest="35" WidthRequest="200" TextColor="White" BackgroundColor="#bf0603"  Clicked="Button_Clicked"></Button>
 
                 <maps:Map x:Name="map" IsShowingUser="False" 
                               HorizontalOptions="FillAndExpand"

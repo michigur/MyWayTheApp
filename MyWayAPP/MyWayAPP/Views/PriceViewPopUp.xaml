@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xct:Popup xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"   
+             Size="300,300"
+             x:Class="MyWayAPP.Views.PriceViewPopUp">
+
+
+    <StackLayout >
+
+        <Label Text="this ride will take about: 12 min" FontSize="20" Padding="15,25,15,15"/>
+        <Label Text="{Binding time}"/>
+
+        <Button Text="Pay" VerticalOptions="End" Clicked="Button_Clicked" BorderRadius="6" Margin="14" FontSize="15" FontAttributes="Bold" HeightRequest="35" WidthRequest="200" TextColor="White" BackgroundColor="#bf0603" />
+    </StackLayout>
+</xct:Popup>

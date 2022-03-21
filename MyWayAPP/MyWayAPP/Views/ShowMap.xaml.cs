@@ -11,15 +11,12 @@ using MyWayAPP.ViewModels;
 using MyWayAPP.Helpers;
 using Xamarin.Forms.Maps;
 using MyWayAPP.Models;
+using Xamarin.CommunityToolkit.Extensions;
 
 namespace MyWayAPP.Views
 {
 
-    //public class Menu
-    //{
-    //    public string Title { get; set; }
-    //    public string Icon { get; set; }
-    //}
+   
 
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ShowMap : ContentPage
@@ -29,8 +26,7 @@ namespace MyWayAPP.Views
             ShowMapViewModel vm = new ShowMapViewModel();
             vm.OnUpdateMapEvent += OnUpdateMap;
             this.BindingContext = vm;
-            //this.BindingContext = this;
-           // MenuItems = GetMenus();
+           
             InitializeComponent();
         }
 
@@ -96,46 +92,12 @@ namespace MyWayAPP.Views
             map.MapElements.Add(path);
         }
 
-
-        //public ObservableCollection<Menu> MenuItems { get; set; }
-
-
-        //private ObservableCollection<Menu> GetMenus()
-        //{
-        //    return new ObservableCollection<Menu>
-        //    {
-        //        new Menu { Title = "PROFILE", Icon = "accountOutline.png" },
-        //        new Menu { Title = "ROUTE", Icon = "carHatchback.png" },
-        //        new Menu { Title = "SIGN OUT", Icon = "logout.png" }
-        //    };
-        //}
-
-        //private async void Show()
-        //{
-
-        //    _ = TitleTxt.FadeTo(0);
-        //    _ = MenuItemsView.FadeTo(1);
-        //    await MainMenuView.RotateTo(0, 300, Easing.BounceOut);
-        //}
-
-        //private async void Hide()
-        //{
-        //    _ = TitleTxt.FadeTo(1);
-        //    _ = MenuItemsView.FadeTo(0);
-        //    await MainMenuView.RotateTo(-90, 300, Easing.BounceOut);
-        //}
-
-        //private void ShowMenu(object sender, EventArgs e)
-        //{
-        //    Show();
-        //}
-
-        //private void MenuTapped(object sender, EventArgs e)
-        //{
-        //    TitleTxt.Text = ((sender as StackLayout).BindingContext as Menu).Title;
-        //    Hide();
-        //}
-
-
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.ShowPopup(new PriceViewPopUp()
+            {
+                IsLightDismissEnabled = false
+            }); 
+        }
     }
 }
