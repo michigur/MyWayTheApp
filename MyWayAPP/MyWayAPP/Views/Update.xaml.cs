@@ -11,14 +11,13 @@ using MyWayAPP.ViewModels;
 namespace MyWayAPP.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ProfilePage : ContentPage
+    public partial class Update : ContentPage
     {
-        public ProfilePage()
+        public Update()
         {
-            this.BindingContext = new ProfilePageViewModel();
             InitializeComponent();
+            UpdateViewModel vm = new UpdateViewModel();
+            this.BindingContext = vm;
         }
-
-
     }
 }

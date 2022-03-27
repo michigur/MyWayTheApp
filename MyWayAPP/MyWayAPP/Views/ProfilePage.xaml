@@ -42,7 +42,7 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-                <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3"  VerticalOptions="End"  BackgroundColor="#bf0603" Text="Update" FontSize="15" TextColor="White"  CornerRadius="30"  Margin="16"  />
+                <Button Grid.Row="6" Grid.Column="0" Command="{Binding NevigateToUpdate}" Grid.ColumnSpan="3"  VerticalOptions="End"  BackgroundColor="#bf0603" Text="Update" FontSize="15" TextColor="White"  CornerRadius="30"  Margin="16"  />
             </Grid>
         </Frame>
     </StackLayout>

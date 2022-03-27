@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyWayAPP.Views.Update">
+    <ContentPage.Content>
+        <StackLayout  BackgroundColor="#2d2f31">
+
+            <Frame  HasShadow="False" CornerRadius="40" Margin="0,100,0,0" VerticalOptions="FillAndExpand" BackgroundColor="#dddddd">
+                <StackLayout>
+               
+                <!-- Email-->
+                    <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                        <Label Text="Email" Grid.Column="0" FontAttributes="Bold" TextColor="#bf0603" FontSize="18" />
+                        <Label Text="{Binding EmailError}" IsVisible="{Binding ShowEmailError}" Grid.Column="1"  />
+                </Grid>
+                    <Label Text="{Binding Email}" FontAttributes="Bold" />
+
+                <!-- User Name-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                        <Label Text="UserName" Grid.Column="0"   FontAttributes="Bold"  TextColor="#bf0603"  FontSize="18"/>
+                        <Label Text="{Binding UserNameError}" IsVisible="{Binding ShowUserNameError}" Grid.Column="1"/>
+                </Grid>
+                    <Label Text="{Binding UserName}" FontAttributes="Bold"/>
+
+                <!-- Password-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                        <Label Text="Password" Grid.Column="0"  FontAttributes="Bold"  TextColor="#669bbc" FontSize="18"/>
+                    <Label Text="{Binding PasswordError}" IsVisible="{Binding ShowPasswordError}" Grid.Column="1" />
+                </Grid>
+                <Entry Placeholder="New Password" MaxLength="30" IsPassword="True" Text="{Binding Password}" />
+
+                <!-- First Name -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                        <Label Text="First Name" Grid.Column="0" FontAttributes="Bold" TextColor="#669bbc"  FontSize="18"/>
+                    <Label Text="{Binding NameError}" IsVisible="{Binding ShowNameError}" Grid.Column="1" />
+                </Grid>
+                <Entry Placeholder="New Name" MaxLength="30" Text="{Binding Name}" />
+
+                <!-- Last Name -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                        <Label Text="Last Name" Grid.Column="0" FontAttributes="Bold" TextColor="#669bbc"  FontSize="18"/>
+                    <Label Text="{Binding LastNameError}" IsVisible="{Binding ShowLastNameError}" Grid.Column="1" />
+                </Grid>
+                <Entry Placeholder="New Last Name" MaxLength="30" Text="{Binding LastName}" />
+
+                <!-- Birth Date -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                        <Label Text="Birthdate" Grid.Column="0"  FontAttributes="Bold"  TextColor="#669bbc"  FontSize="18"/>
+                    <Label Text="{Binding BirthDateError}" IsVisible="{Binding ShowBirthDateError}" Grid.Column="1" />
+                </Grid>
+                <DatePicker Date="{Binding BirthDate}" />
+
+
+
+                    <Button Padding="0" Grid.Column="2" Text="Save Changes" HorizontalOptions="Start"  VerticalOptions="Center"  BackgroundColor="#669bbc"  FontSize="15" TextColor="White"  CornerRadius="30"  Margin="16"  Command="{Binding SaveDataCommand}"/>
+                
+            </StackLayout>
+                
+                
+            </Frame>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

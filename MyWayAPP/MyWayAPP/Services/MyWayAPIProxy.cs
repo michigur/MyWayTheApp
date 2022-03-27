@@ -83,6 +83,8 @@ namespace MyWayAPP.Services
 
 
 
+
+
         public async Task<Client> LoginAsync(string email, string pass)
         {
 
@@ -104,6 +106,41 @@ namespace MyWayAPP.Services
                 {
                     return null;
 
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
+
+
+
+
+        public async Task<Client> UpdateUser(Client user)
+        {
+            try
+            {
+                JsonSerializerOptions options = new JsonSerializerOptions
+                {
+                    ReferenceHandler = ReferenceHandler.Preserve,
+                    Encoder = JavaScriptEncoder.Create(UnicodeRanges.Hebrew, UnicodeRanges.BasicLatin),
+                    PropertyNameCaseInsensitive = true
+                };
+                string jsonObject = JsonSerializer.Serialize<Client>(user, options);
+                StringContent content = new StringContent(jsonObject, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = await this.client.PostAsync($"{this.baseUri}/SignUp", content);
+                if (response.IsSuccessStatusCode)
+                {
+                    jsonObject = await response.Content.ReadAsStringAsync();
+                    Client ret = JsonSerializer.Deserialize<Client>(jsonObject, options);
+                    return ret;
+                }
+                else
+                {
+                    return null;
                 }
             }
             catch (Exception e)

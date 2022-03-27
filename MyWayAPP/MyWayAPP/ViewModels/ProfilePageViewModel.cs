@@ -119,5 +119,16 @@ namespace MyWayAPP.ViewModels
         }
 
 
+
+        public ICommand NevigateToUpdate => new Command(ToUpdate);
+        void ToUpdate()
+        {
+
+            Page p = new Update();
+            App.Current.MainPage = p;
+        }
+
+
+
     }
 }
