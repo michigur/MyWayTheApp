@@ -90,6 +90,7 @@ namespace MyWayAPP.Views
             }
             //Add the line to the map!
             map.MapElements.Add(path);
+            
         }
 
         private void Button_Clicked(object sender, EventArgs e)
@@ -97,7 +98,7 @@ namespace MyWayAPP.Views
             Navigation.ShowPopup(new PriceViewPopUp()
             {
                 IsLightDismissEnabled = false
-            }); 
+            });
         }
     }
 }

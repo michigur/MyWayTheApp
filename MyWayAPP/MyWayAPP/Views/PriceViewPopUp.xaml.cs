@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.CommunityToolkit.UI.Views;
+using MyWayAPP.ViewModels;
+using MyWayAPP.Helpers;
+using Xamarin.Forms.Maps;
+
 
 namespace MyWayAPP.Views
 {
@@ -15,6 +19,9 @@ namespace MyWayAPP.Views
     {
         public PriceViewPopUp()
         {
+            ShowMapViewModel vm = new ShowMapViewModel();
+           
+            this.BindingContext = vm;
             InitializeComponent();
         }
 

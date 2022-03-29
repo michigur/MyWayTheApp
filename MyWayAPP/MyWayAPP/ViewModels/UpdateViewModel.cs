@@ -399,6 +399,8 @@ namespace MyWayAPP.ViewModels
                 Client user = await proxy.UpdateUser(newUser);
 
                 if (user == null)
+
+
                 {
                     await App.Current.MainPage.Navigation.PopModalAsync();
                     await App.Current.MainPage.DisplayAlert("שגיאה", "העדכון נכשל", "אישור", FlowDirection.RightToLeft);

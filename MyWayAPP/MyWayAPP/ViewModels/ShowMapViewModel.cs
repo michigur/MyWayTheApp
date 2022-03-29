@@ -6,7 +6,12 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using MyWayAPP.Services;
 using MyWayAPP.Helpers;
+using MyWayAPP.Views;
 using MyWayAPP.Models;
+using Android.Content.Res;
+using Xamarin.CommunityToolkit.Extensions;
+using Xamarin.Forms.GoogleMaps;
+
 namespace MyWayAPP.ViewModels
 {
     class ShowMapViewModel : INotifyPropertyChanged
@@ -20,8 +25,29 @@ namespace MyWayAPP.ViewModels
         #endregion
 
 
-       
-       
+        public string driveTime;
+        public string DriveTime
+        {
+            get => this.driveTime;
+            set
+            {
+                this.driveTime = "16 min";
+                OnPropertyChanged("DriveTime");
+            }
+        }
+
+
+        public string drivePrice;
+        public string DrivePrice
+        {
+            get => this.drivePrice;
+            set
+            {
+                this.driveTime = "30 Shekels";
+                OnPropertyChanged("DrivePrice");
+            }
+        }
+
 
         private string origin;
         public string Origin
@@ -71,13 +97,24 @@ namespace MyWayAPP.ViewModels
                 if (OnUpdateMapEvent != null)
                     OnUpdateMapEvent();
 
+                
+
+
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine("cant find route");
             }
             
             
+        }
+
+        public ICommand Pay => new Command(pay);
+        void pay()
+        {
+            Page p = new CreditCardView();
+            App.Current.MainPage = p;
+
         }
 
         public event Action OnUpdateMapEvent;

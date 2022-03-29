@@ -520,6 +520,9 @@ namespace MyWayAPP.ViewModels
             ValidatePassword();
             ValidateUsername();
             ValidateAge();
+            ValidateCardDate();
+            ValidateCVV();
+            
 
             return !(ShowPasswordError || ShowUsernameError || ShowAgeError);
         }

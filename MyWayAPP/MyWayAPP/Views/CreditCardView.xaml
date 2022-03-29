@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyWayAPP.Views.CreditCardView"
+             xmlns:local="clr-namespace:MyWayAPP.Views"
+             NavigationPage.HasNavigationBar="False">
+
+   
+    <ScrollView>
+       
+        
+        <Grid VerticalOptions="FillAndExpand"
+              ColumnSpacing="20"
+              HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Frame Padding="0" BackgroundColor="#003049"  Grid.ColumnSpan="3">
+                <StackLayout Orientation="Horizontal" Spacing="40"  HeightRequest="80"   HorizontalOptions="Center">
+                    <Label x:Name="TitleTxt" Text="Card Details" TextColor="White" FontSize="25" FontAttributes="Bold" 
+                        HorizontalOptions="Center" VerticalOptions="Center"/>
+                </StackLayout>
+
+            </Frame>
+           
+
+            <Frame HasShadow="false"
+                      Padding="10"
+                      BorderColor="{StaticResource LightColor}"
+                      Margin="30,30,30,10"
+                      Grid.Row="1"
+                      Grid.Column="0"
+                      Grid.ColumnSpan="3">
+                <StackLayout Orientation="Horizontal"
+                               Spacing="20">
+                    <Image Source="{Binding CardNumber,Converter={StaticResource CardConverter}}"
+                               HeightRequest="30"/>
+
+                    <Entry HorizontalOptions="FillAndExpand"
+                               Keyboard="Numeric"
+                               Text="{Binding CardNumber, Mode=TwoWay}"
+                               Visual="Custom"
+                           Placeholder="Credit Card Number">
+                        
+                    </Entry>
+                </StackLayout>
+            </Frame>
+
+            <Frame HasShadow="false"
+                      Padding="10"
+                      BorderColor="{StaticResource LightColor}"
+                      Margin="30,0,0,0"
+                      Grid.Row="2"
+                      Grid.Column="0"
+                      Grid.ColumnSpan="2">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="ic_date"
+                               HeightRequest="25"/>
+                    <Entry HorizontalOptions="FillAndExpand"
+                               Keyboard="Numeric"
+                               Text="{Binding CardExpirationDate}"
+                               Visual="Custom"
+                           Placeholder="Card Expiration Date">
+                       
+                    </Entry>
+                </StackLayout>
+            </Frame>
+
+            <Frame HasShadow="false"
+                       Padding="10"
+                      BorderColor="{StaticResource LightColor}"
+                      Margin="0,0,30,0"
+                      Grid.Row="2"
+                      Grid.Column="2">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="ic_cvv"
+                              HeightRequest="25"/>
+                    <Entry HorizontalOptions="FillAndExpand"
+                              Keyboard="Numeric"
+                              Text="{Binding CardCvv}"
+                              Visual="Custom"
+                           Placeholder="CVV">
+                        
+                    </Entry>
+                </StackLayout>
+            </Frame>
+
+            <CheckBox Color="LightGray"
+                         WidthRequest="30"
+                         HorizontalOptions="Start"
+                         Margin="30,0,0,0"
+                         Visual="Material"
+                         Grid.Row="3"
+                         Grid.Column="0"/>
+
+            <Label Text="Remember me"
+                       TextColor="{StaticResource PrimaryDark}"
+                       FontSize="16"
+                       VerticalOptions="Center"
+                       Grid.Row="3"
+                       Grid.Column="1"
+                       Grid.ColumnSpan="2"/>
+
+           
+
+            <BoxView HorizontalOptions="FillAndExpand"
+                         Color="{StaticResource Secondary}"
+                         Visual="Default"
+                         HeightRequest="1"
+                         Margin="0,30"
+                         Grid.Row="5"
+                         Grid.Column="0"
+                         Grid.ColumnSpan="3"/>
+
+            <Button Text="Purchase"
+                         BackgroundColor="#bf0603"
+                         CornerRadius="26"
+                         FontSize="18"
+                         Grid.Row="6"
+                         Grid.Column="0"
+                         Grid.ColumnSpan="3"
+                         Padding="18"
+                         TextColor="White"
+                         Margin="30,0,30,30"/>
+
+            <Button Text="Back to Route Page"
+                         BackgroundColor="#669bbc"
+                         CornerRadius="26"
+                         FontSize="18"
+                         Grid.Row="7"
+                         Grid.Column="0"
+                         Grid.ColumnSpan="3"
+                         Padding="18"
+                         TextColor="White"
+                         Margin="30,0,30,30"
+                    Command="{Binding gotomap}"/>
+        </Grid>
+    </ScrollView>
+</ContentPage>

@@ -102,7 +102,7 @@
                                             <Frame BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
                                                 <Image Source="location.png" Aspect="AspectFill" Margin="0"/>
                                             </Frame>
-                                            <Entry Placeholder="Address" IsPassword="True" TextColor="White" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                            <Entry Placeholder="Address" Text="{Binding Address}" IsPassword="True" TextColor="White" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                                         </StackLayout>
 
                                     </Frame>
@@ -116,11 +116,16 @@
                                                 <Image Source="creditCard.png" Aspect="AspectFill" Margin="0"/>
                                             </Frame>
 
-                                            <Entry Placeholder="Credit-Number" Keyboard="Numeric" IsPassword="True" TextColor="White" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                            <Entry Placeholder="Credit-Number" Text="{Binding CreditNum}" Keyboard="Numeric" IsPassword="True" TextColor="White" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                                         </StackLayout>
                                     </Frame>
+                                    
+                                    
                                     <Label Text="Card-Date" FontSize="Large"></Label>
-                                    <DatePicker></DatePicker>
+                                    <DatePicker Date="{Binding CardDate}"></DatePicker>
+                                    
+                                    
+                                    
                                     <Label Text="{Binding CVVError}" TextColor="Red" IsVisible="{Binding ShowCVVError}" />
                                     <Frame BackgroundColor="#96FFFFFF" BorderColor="White" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                                         <StackLayout Orientation="Horizontal">
