@@ -8,9 +8,10 @@ using MyWayAPP.Services;
 using MyWayAPP.Helpers;
 using MyWayAPP.Views;
 using MyWayAPP.Models;
-using Android.Content.Res;
+//using Android.Content.Res;
 using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.Forms.GoogleMaps;
+using System.Threading.Tasks;
 
 namespace MyWayAPP.ViewModels
 {
@@ -24,6 +25,7 @@ namespace MyWayAPP.ViewModels
         }
         #endregion
 
+        
 
         public string driveTime;
         public string DriveTime
@@ -36,6 +38,16 @@ namespace MyWayAPP.ViewModels
             }
         }
 
+        public string carLocation;
+        public string CarLocation
+        {
+            get => this.carLocation;
+            set
+            {
+                this.carLocation = value;
+                OnPropertyChanged("carLocation");
+            }
+        }
 
         public string drivePrice;
         public string DrivePrice
@@ -80,6 +92,8 @@ namespace MyWayAPP.ViewModels
         {
             try
             {
+                List<Car> cars = await this.Loadcars((App)App.Current);
+
                 GoogleMapsApiService service = new GoogleMapsApiService();
                
                 GooglePlaceAutoCompleteResult originPlaces = await service.GetPlaces(Origin);
@@ -97,7 +111,8 @@ namespace MyWayAPP.ViewModels
                 if (OnUpdateMapEvent != null)
                     OnUpdateMapEvent();
 
-                
+
+               
 
 
             }
@@ -109,9 +124,33 @@ namespace MyWayAPP.ViewModels
             
         }
 
+
+
+        public ShowMapViewModel()
+        {
+
+            App theApp = (App)App.Current;
+            Car currentUser = theApp.CurrentCar;
+
+            if (currentUser != null)
+            {
+                this.carLocation = currentUser.CarCurrentLocation;
+            }
+
+        }
+
+        public async Task<List<Car>> Loadcars(App theApp)
+        {
+            MyWayAPIProxy proxy = MyWayAPIProxy.CreateProxy();
+            theApp.Cars = await proxy.GetCarsAsync();
+            return theApp.Cars;
+        }
+
+
         public ICommand Pay => new Command(pay);
         void pay()
         {
+
             Page p = new CreditCardView();
             App.Current.MainPage = p;
 

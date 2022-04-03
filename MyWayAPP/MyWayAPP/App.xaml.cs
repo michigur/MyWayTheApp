@@ -12,7 +12,7 @@ namespace MyWayAPP
     {
         //Generate Google Api Key at: https://console.cloud.google.com/ for Places API, Directions API, Maps SDK For android!
         //Generate Bing Api Key at: https://www.bingmapsportal.com/
-        public const string GoogleApiKey = "";
+        public const string GoogleApiKey = "AIzaSyCz8nXSYXgR0nfzko2h6dJlvtYt3M0LFwM";
         public const string BingApiKey = "YOUR BING API KEY";
     }
 
@@ -29,16 +29,16 @@ namespace MyWayAPP
         //The current logged in user
         public Client CurrentUser { get; set; }
 
-        //The list of phone types
-       
+        //The list of cars
+        public List<Car> Cars { get; set; }
 
-
+        public Car CurrentCar { get; set; }
         public App()
         {
             InitializeComponent();
             GoogleMapsApiService.Initialize(Constants.GoogleApiKey);
             Device.SetFlags(new[] { "MediaElement_Experimental", "Brush_Experimental" });
-            Page p = new CreditCardView();
+            Page p = new ShowMap();
             MainPage = new NavigationPage(p);
         }
 
