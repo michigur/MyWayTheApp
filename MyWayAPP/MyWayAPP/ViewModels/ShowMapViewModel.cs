@@ -93,7 +93,7 @@ namespace MyWayAPP.ViewModels
             try
             {
                 List<Car> cars = await this.Loadcars((App)App.Current);
-
+                
                 GoogleMapsApiService service = new GoogleMapsApiService();
                
                 GooglePlaceAutoCompleteResult originPlaces = await service.GetPlaces(Origin);
@@ -143,6 +143,7 @@ namespace MyWayAPP.ViewModels
         {
             MyWayAPIProxy proxy = MyWayAPIProxy.CreateProxy();
             theApp.Cars = await proxy.GetCarsAsync();
+            theApp.CurrentCar = theApp.Cars[0];
             return theApp.Cars;
         }
 
@@ -151,7 +152,7 @@ namespace MyWayAPP.ViewModels
         void pay()
         {
 
-            Page p = new CreditCardView();
+            Page p = new PresentCar();
             App.Current.MainPage = p;
 
         }

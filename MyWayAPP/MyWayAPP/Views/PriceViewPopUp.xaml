@@ -8,7 +8,7 @@
 
     <StackLayout >
 
-        <Label Text="this ride will take about:" FontSize="20" Padding="15,25,5,15"/>
+        <Label Text="car location:" FontSize="20" Padding="15,25,5,15"/>
         <Label Text="{Binding carLocation}" TextColor="Aqua"/>
         <Label Text="this ride will cost:" FontSize="20" Padding="15,25,5,15"/>
         <Label Text="{Binding  DrivePrice}"/>
