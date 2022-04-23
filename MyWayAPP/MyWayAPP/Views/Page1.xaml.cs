@@ -19,23 +19,25 @@ namespace MyWayAPP.Views
         public Page1()
         {
             InitializeComponent();
-            MenuItems = GetMenus();
-            this.BindingContext = this;
+           // MenuItems = GetMenus();
+            
         }
 
+
+        
 
         public ObservableCollection<Menu> MenuItems { get; set; }
 
 
-        public ObservableCollection<Menu> GetMenus()
-        {
-            return new ObservableCollection<Menu>
-            {
-                new Menu { Title = "PROFILE", Icon = "accountOutline.png", page = new ProfilePage() },
-                new Menu { Title = "ROUTE", Icon = "carHatchback.png" , page = new ShowMap()},
-                new Menu { Title = "SIGN OUT", Icon = "logout.png", page = new LandingPage() }
-            };
-        }
+        //public ObservableCollection<Menu> GetMenus()
+        //{
+        //    return new ObservableCollection<Menu>
+        //    {
+        //        new Menu { Title = "PROFILE", Icon = "accountOutline.png", page = new ProfilePage() },
+        //        new Menu { Title = "ROUTE", Icon = "carHatchback.png" , page = new ShowMap()},
+        //        new Menu { Title = "SIGN OUT", Icon = "logout.png", page = new LandingPage() }
+        //    };
+        //}
 
         private async void Show()
         {
@@ -68,7 +70,23 @@ namespace MyWayAPP.Views
             Navigation.PushAsync(p);
         }
 
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            ContentPage p = new LandingPage();
+            Navigation.PushAsync(p);
+        }
 
+        private void Button_Clicked1(object sender, EventArgs e)
+        {
+            ContentPage p = new ProfilePage();
+            Navigation.PushAsync(p);
+        }
+
+        private void Button_Clicked2(object sender, EventArgs e)
+        {
+            ContentPage p = new ShowMap();
+            Navigation.PushAsync(p);
+        }
     }
 
     public class Menu
