@@ -86,7 +86,7 @@
 
                             <Image Source="logout.png" Grid.Row="3" Grid.Column="1" WidthRequest="30" HeightRequest="30" 
                                     VerticalOptions="Center" HorizontalOptions="Start"/>
-                            <Button Text="LogOut" Clicked="Button_Clicked" TextColor="White" FontSize="22" FontAttributes="Bold" 
+                            <Button Text="LogOut" Command="{Binding Logout}" TextColor="White" FontSize="22" FontAttributes="Bold" 
                                     HorizontalOptions="End" VerticalOptions="Center" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="4" BackgroundColor="Transparent" />
 
 

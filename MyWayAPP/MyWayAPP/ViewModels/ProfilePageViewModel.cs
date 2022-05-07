@@ -31,7 +31,7 @@ namespace MyWayAPP.ViewModels
         #region FirstName
         private string name;
 
-        public string Name
+        public string FName
         {
             get => name;
             set
@@ -72,7 +72,7 @@ namespace MyWayAPP.ViewModels
 
         #region BirthDate
         private DateTime birthDate;
-        public DateTime BirthDate
+        public DateTime Birthday
         {
             get => birthDate;
             set
@@ -109,9 +109,9 @@ namespace MyWayAPP.ViewModels
             {
                 this.Email = currentUser.ClientsEmail;
                 this.UserName = currentUser.ClientsUsername;
-                this.Name = currentUser.ClientName;
+                this.FName = currentUser.ClientName;
                 //this.LastName = currentUser.LastName;
-                this.BirthDate = currentUser.ClientsBirthDay;
+                this.Birthday = currentUser.ClientsBirthDay;
                 this.Gender = currentUser.ClientsGenedr;
             }
 
@@ -137,6 +137,18 @@ namespace MyWayAPP.ViewModels
             App.Current.MainPage = p;
 
         }
+
+
+        public ICommand Logout => new Command(logout);
+        void logout()
+        {
+            App theApp = (App)Application.Current;
+            theApp.CurrentUser = null;
+            Page p = new LandingPage();
+            App.Current.MainPage = p;
+
+        }
+
 
 
     }
