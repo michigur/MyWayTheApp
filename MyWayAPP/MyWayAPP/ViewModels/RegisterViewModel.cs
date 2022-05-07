@@ -191,7 +191,7 @@ namespace MyWayAPP.ViewModels
             ShowPasswordError = true;
             if (string.IsNullOrEmpty(Password))
                 PasswordError = "Password cannot be blank";
-            else if (Password.Length < 8)
+            else if (Password.Length < 6)
                 PasswordError = "Password must be more than 8 characters";
             else
                 ShowPasswordError = false;
@@ -330,7 +330,7 @@ namespace MyWayAPP.ViewModels
             set
             {
                 showfirstNameError = value;
-                OnPropertyChanged("showfirstNameError");
+                OnPropertyChanged("ShowFirstNameError");
             }
         }
 
@@ -342,7 +342,7 @@ namespace MyWayAPP.ViewModels
             set
             {
                 firstNameError = value;
-                OnPropertyChanged("firstNameError");
+                OnPropertyChanged("FirstNameError");
             }
         }
 
@@ -370,7 +370,7 @@ namespace MyWayAPP.ViewModels
             set
             {
                 showlastNameError = value;
-                OnPropertyChanged("showlastNameError");
+                OnPropertyChanged("ShowLastNameError");
             }
         }
 
@@ -382,7 +382,7 @@ namespace MyWayAPP.ViewModels
             set
             {
                 lastNameError = value;
-                OnPropertyChanged("lastNameError");
+                OnPropertyChanged("LastNameError");
             }
         }
 
@@ -516,7 +516,7 @@ namespace MyWayAPP.ViewModels
             ValidateCardDate();
             ValidateGender();
             ValidateLastName();
-            ValidateFirstName();
+           // ValidateFirstName();
             ValidatePassword();
             ValidateUsername();
             ValidateAge();
@@ -566,9 +566,13 @@ namespace MyWayAPP.ViewModels
                 else
                 {
                     App theApp = (App)Application.Current;
-                    Page p = new LogInPage();
+                    Page p = new ShowMap();
                     App.Current.MainPage = p;
                 }
+            }
+            else
+            {
+                await Application.Current.MainPage.DisplayAlert("Sign Up Failed!", "Invalid input", "OK");
             }
         }
            

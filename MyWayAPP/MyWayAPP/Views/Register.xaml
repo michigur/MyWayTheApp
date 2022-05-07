@@ -25,7 +25,7 @@
                             <ScrollView>
                                 <StackLayout Padding="0" Margin="15,10">
 
-                                    <Label Text="{Binding firstNameError}" TextColor="Red" IsVisible="{Binding showfirstNameError}" />
+                                    <Label Text="{Binding FirstNameError}" TextColor="Red" IsVisible="{Binding ShowFirstNameError}" />
                                     <Frame BackgroundColor="#96FFFFFF" BorderColor="White" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                                         <StackLayout Orientation="Horizontal">
                                             <Frame BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
@@ -37,7 +37,7 @@
                                     </Frame>
 
 
-                                    <Label Text="{Binding lastNameError}" TextColor="Red" IsVisible="{Binding showlastNameError}" />
+                                    <Label Text="{Binding LastNameError}" TextColor="Red" IsVisible="{Binding ShowLastNameError}" />
                                     <Frame BackgroundColor="#96FFFFFF" BorderColor="White" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
                                         <StackLayout Orientation="Horizontal">
                                             <Frame BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">

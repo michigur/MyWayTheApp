@@ -2,78 +2,135 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps" 
-             xmlns:vm="clr-namespace:MyWayAPP.ViewModels" x:DataType="vm:ShowMapViewModel"
-             xmlns:locals ="clr-namespace:MyWayAPP.Views"
              x:Class="MyWayAPP.Views.ShowMap"
-               NavigationPage.HasNavigationBar="false">
+             NavigationPage.HasNavigationBar="false">
+
+
 
     <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <StackLayout BackgroundColor="#003049">
 
-               
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#003049">
 
-                <Frame BackgroundColor="#96FFFFFF" BorderColor="White" Margin="15,15,15,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
-                    <StackLayout Orientation="Horizontal">
-                        <Frame BackgroundColor="Transparent" HeightRequest="0" WidthRequest="25" CornerRadius="30" Padding="0" Margin="5">
-                            <Image Source="profile.png" Aspect="AspectFill" Margin="0"/>
-                        </Frame>
 
-                        <Entry  TextColor="White" Text="{Binding Origin}" Placeholder="Origin" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
-                    </StackLayout>
-                </Frame>
 
-                <Frame BackgroundColor="#96FFFFFF" BorderColor="White" Margin="15,5,15,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
-                    <StackLayout Orientation="Horizontal">
-                        <Frame BackgroundColor="Transparent" HeightRequest="0" WidthRequest="25" CornerRadius="30" Padding="0" Margin="5">
-                            <Image Source="profile.png" Aspect="AspectFill" Margin="0"/>
-                        </Frame>
 
-                        <Entry  TextColor="White" Text="{Binding Destination}" Placeholder="Destination" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
-                    </StackLayout>
-                </Frame>
-                <Button Text=" Let's Go!"   Command="{Binding Go}"  BorderRadius="6" Margin="14" FontSize="15" FontAttributes="Bold" HeightRequest="35" WidthRequest="200" TextColor="White" BackgroundColor="#bf0603"  Clicked="Button_Clicked"></Button>
+                    <Frame BackgroundColor="#96FFFFFF" BorderColor="White" Margin="15,66,15,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                        <StackLayout Orientation="Horizontal">
+                            <Frame BackgroundColor="Transparent" HeightRequest="0" WidthRequest="25" CornerRadius="30" Padding="0" Margin="5">
+                                <Image Source="profile.png" Aspect="AspectFill" Margin="0"/>
+                            </Frame>
 
-                <maps:Map x:Name="map" IsShowingUser="False" 
+                            <Entry  TextColor="White" Text="{Binding Origin}" Placeholder="Origin" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame BackgroundColor="#96FFFFFF" BorderColor="White" Margin="15,5,15,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                        <StackLayout Orientation="Horizontal">
+                            <Frame BackgroundColor="Transparent" HeightRequest="0" WidthRequest="25" CornerRadius="30" Padding="0" Margin="5">
+                                <Image Source="profile.png" Aspect="AspectFill" Margin="0"/>
+                            </Frame>
+
+                            <Entry  TextColor="White" Text="{Binding Destination}" Placeholder="Destination" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                        </StackLayout>
+                    </Frame>
+                    <Button Text=" Let's Go!"   Command="{Binding Go}"  BorderRadius="6" Margin="14" FontSize="15" FontAttributes="Bold" HeightRequest="35" WidthRequest="200" TextColor="White" BackgroundColor="#bf0603"  Clicked="Button_Clicked3"></Button>
+
+                    <maps:Map x:Name="map" IsShowingUser="False" 
                               HorizontalOptions="FillAndExpand"
                      />
+                
+                
+                
             </StackLayout>
+
+
         </Grid>
-        <!--<Grid x:Name="MainMenuView" ColumnDefinitions="Auto, *" BackgroundColor="#003049" HeightRequest="420" 
+
+
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <Grid x:Name="MainMenuView" ColumnDefinitions="Auto, *" BackgroundColor="#003049" HeightRequest="420" 
               VerticalOptions="Start" AnchorX="0.08" AnchorY="0.08" Rotation="-90">
-            <Grid AnchorX="0.08" AnchorY="0.08" Rotation="90">
-                <StackLayout Orientation="Horizontal" Spacing="20">
-                    <ImageButton Source="menu.png" BackgroundColor="Transparent" WidthRequest="20" HeightRequest="20" 
-                            VerticalOptions="Start" HorizontalOptions="Center" Margin="0,5,0,0" />
-                    <Label x:Name="TitleTxt" Text="ACTIVITY" TextColor="White" FontSize="22" FontAttributes="Bold" 
+                <Grid AnchorX="0.08" AnchorY="0.08" Rotation="90">
+                    <StackLayout Orientation="Horizontal" Spacing="20">
+                        <ImageButton Source="menu.png" BackgroundColor="Transparent" WidthRequest="20" HeightRequest="20" 
+                            VerticalOptions="Start" HorizontalOptions="Center" Margin="0,5,0,0" Clicked="ShowMenu"/>
+                        <Label x:Name="TitleTxt" Text="ACTIVITY" TextColor="White" FontSize="22" FontAttributes="Bold" 
                         HorizontalOptions="Center" VerticalOptions="Start"/>
-                </StackLayout>
-            </Grid>-->
-        <!-- <Grid x:Name="MenuItemsView" Grid.Column="1" HorizontalOptions="FillAndExpand" TranslationX="-50" Opacity="0">
-                <StackLayout Margin="0,70,0,0" Spacing="20" BindableLayout.ItemsSource="{Binding MenuItems}">
-                    <BindableLayout.ItemTemplate>
-                        <DataTemplate>
-                            <StackLayout Orientation="Horizontal" Spacing="20">
-                                <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="MenuTapped"/>
+                    </StackLayout>
+                </Grid>
+                <Grid x:Name="MenuItemsView" Grid.Column="1" HorizontalOptions="FillAndExpand" TranslationX="-50" Opacity="0">
+
+
+                    <StackLayout Orientation="Horizontal" Spacing="10" Margin="0,70,0,0">
+                        <!-- <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="GoToPage"/>
                                 </StackLayout.GestureRecognizers>
                                 <Image Source="{Binding Icon}" WidthRequest="20" HeightRequest="20" 
                                     VerticalOptions="Center" HorizontalOptions="Start"/>
                                 <Label Text="{Binding Title}" TextColor="White" FontSize="22" FontAttributes="Bold" 
                                     HorizontalOptions="Start" VerticalOptions="Center"/>
+                                -->
+                        <Grid RowDefinitions="8" ColumnDefinitions="5">
+                            <Image Source="accountOutline.png" Grid.Row="1" Grid.Column="1" WidthRequest="30" HeightRequest="30" 
+                                    VerticalOptions="Center" HorizontalOptions="Start"/>
+                            <Button Text="Profile"  Command="{Binding Profile}" TextColor="White" FontSize="22" FontAttributes="Bold" 
+                                    HorizontalOptions="End" VerticalOptions="Center" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="4" BackgroundColor="Transparent" />
 
 
-                            </StackLayout>
-                        </DataTemplate>
-                    </BindableLayout.ItemTemplate>
-                </StackLayout>
-                <StackLayout Margin="0,220,45,0">
-                    <Image Source="logoClean.png" />
-                </StackLayout>
-            </Grid>-->
+                            <Image Source="carHatchback.png" Grid.Row="2" Grid.Column="1" WidthRequest="30" HeightRequest="30" 
+                                    VerticalOptions="Center" HorizontalOptions="Start"/>
+                            <Button Text="MY WAY" Clicked="Button_Clicked2" TextColor="White" FontSize="22" FontAttributes="Bold" 
+                                    HorizontalOptions="End" VerticalOptions="Center" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="4" BackgroundColor="Transparent" />
+
+                            <Image Source="logout.png" Grid.Row="3" Grid.Column="1" WidthRequest="30" HeightRequest="30" 
+                                    VerticalOptions="Center" HorizontalOptions="Start"/>
+                            <Button Text="LogOut" Clicked="Button_Clicked" TextColor="White" FontSize="22" FontAttributes="Bold" 
+                                    HorizontalOptions="End" VerticalOptions="Center" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="4" BackgroundColor="Transparent" />
 
 
-        <!-- </Grid>-->
+                            <Button Text="LogOut" TextColor="Transparent" FontSize="20" FontAttributes="Bold" 
+                                    HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="3" BackgroundColor="Transparent" />
+                            <Button Text="LogOut" TextColor="Transparent" FontSize="20" FontAttributes="Bold" 
+                                    HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="3" BackgroundColor="Transparent" />
+                            <Button Text="LogOut" TextColor="Transparent" FontSize="20" FontAttributes="Bold" 
+                                    HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="3" BackgroundColor="Transparent" />
+                            <Button Text="LogOut" TextColor="Transparent" FontSize="20" FontAttributes="Bold" 
+                                    HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="3" BackgroundColor="Transparent" />
+
+                        </Grid>
+
+
+                    </StackLayout>
+
+
+                    <StackLayout Margin="0,220,45,0">
+                        <Image Source="logoClean.png" />
+                    </StackLayout>
+                </Grid>
+
+            </Grid>
+
+
+        </Grid>
+
     </Grid>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
     
 </ContentPage>

@@ -64,8 +64,8 @@ namespace MyWayAPP.Views
 
         private void Button_Clicked1(object sender, EventArgs e)
         {
-            ContentPage p = new ProfilePage();
-            Navigation.PushAsync(p);
+            //ContentPage p = new ProfilePage();
+            //Navigation.PushAsync(p);
         }
 
         private void Button_Clicked2(object sender, EventArgs e)

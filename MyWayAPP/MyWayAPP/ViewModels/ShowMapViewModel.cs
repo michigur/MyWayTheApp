@@ -25,7 +25,11 @@ namespace MyWayAPP.ViewModels
         }
         #endregion
 
-        
+        CarRoutteType crt = new CarRoutteType()
+        {  
+            CarRoutteName = "route",
+            CarRoutteTypeId = 1
+        };
 
         public string driveTime;
         public string DriveTime
@@ -112,7 +116,34 @@ namespace MyWayAPP.ViewModels
                     OnUpdateMapEvent();
 
 
-               
+                App theApp = (App)App.Current;
+
+                MyWayAPIProxy proxy = MyWayAPIProxy.CreateProxy();
+                RoutteCar u = new RoutteCar
+                {
+                    RouteDeputureLocation = Origin,
+                    RouteArrivalLocation = destination,
+                    RouteDeputureTime = DateTime.Now,
+                    RouteArrivalTime = DateTime.Now,
+                    CarRoutteTypeId = 1,
+                    CarId = 5,
+                    ClientId = theApp.CurrentUser.ClientId,
+                    Car = theApp.CurrentCar,
+                    Client = theApp.CurrentUser,
+                    CarRoutteType = crt
+                };
+
+                bool isReturned = await proxy.RegisterRoute(u);
+
+                if (isReturned == false)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Sign Up Failed!", "Invalid input", "OK");
+
+                }
+                else
+                {
+                   
+                }
 
 
             }
@@ -156,6 +187,16 @@ namespace MyWayAPP.ViewModels
             App.Current.MainPage = p;
 
         }
+
+        public ICommand Profile => new Command(profile);
+        void profile()
+        {
+
+            Page p = new ProfilePage();
+            App.Current.MainPage = p;
+
+        }
+
 
         public event Action OnUpdateMapEvent;
 

@@ -129,6 +129,15 @@ namespace MyWayAPP.ViewModels
         }
 
 
+        public ICommand ShowMap => new Command(showMap);
+        void showMap()
+        {
+
+            Page p = new ShowMap();
+            App.Current.MainPage = p;
+
+        }
+
 
     }
 }

@@ -65,7 +65,7 @@ namespace MyWayAPP.ViewModels
 
                 App theApp = (App)Application.Current;
                 theApp.CurrentUser = user;
-                Page p = new ProfilePage();
+                Page p = new ShowMap();
                 App.Current.MainPage = p;
 
 

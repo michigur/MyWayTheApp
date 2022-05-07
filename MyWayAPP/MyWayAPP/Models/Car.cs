@@ -1,5 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using MyWayAPP.Services;
+using Xamarin.Forms;
+using Xamarin.Essentials;
+using System.Threading.Tasks;
 
 
 namespace MyWayAPP.Models
@@ -22,5 +28,11 @@ namespace MyWayAPP.Models
         public virtual CarType CarType { get; set; }
         public virtual Fleet Fleet { get; set; }
         public virtual List<RoutteCar> RoutteCars { get; set; }
+
+
+
+
+       
+
     }
 }
