@@ -8,12 +8,15 @@
 
     <StackLayout >
 
-        <Label Text="car location:" FontSize="20" Padding="15,25,5,15"/>
-        <Label Text="{Binding carLocation}" TextColor="Aqua"/>
-        <Label Text="this ride will cost:" FontSize="20" Padding="15,25,5,15"/>
-        <Label Text="{Binding  DrivePrice}"/>
+        <Label Text="car location:" FontSize="18" FontAttributes="Bold" Padding="15,5,5,15"/>
+        <Label Text="{Binding CarLocation}" TextColor="#2d2f31" VerticalOptions="Center" />
+        <Label Text="Number of seats:" FontSize="18" FontAttributes="Bold" Padding="15,5,5,15"/>
+        <Label Text="{Binding CarSeats}" TextColor="#2d2f31"  VerticalOptions="Center"/>
+        <Label Text="Price:" FontSize="18" FontAttributes="Bold" Padding="15,5,5,15"/>
+        <Label Text="{Binding DrivePrice}" TextColor="#2d2f31" VerticalOptions="Center"  />
 
-        <Button Text="Pay" VerticalOptions="End" Command="{Binding Pay}"  Clicked="Button_Clicked"  BorderRadius="6" Margin="14" FontSize="15" FontAttributes="Bold" HeightRequest="35" WidthRequest="200" TextColor="White" BackgroundColor="#bf0603" />
+
+        <Button Text="Accept car" VerticalOptions="End" Command="{Binding Pay}"  Clicked="Button_Clicked"  BorderRadius="6" Margin="14" FontSize="15" FontAttributes="Bold" HeightRequest="35" WidthRequest="200" TextColor="White" BackgroundColor="#bf0603" />
         <Button Text="Cancel" VerticalOptions="End" Clicked="Button_Clicked" BorderRadius="6" Margin="14" FontSize="15" FontAttributes="Bold" HeightRequest="35" WidthRequest="200" TextColor="White" BackgroundColor="#003049" />
 
     </StackLayout>

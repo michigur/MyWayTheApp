@@ -188,12 +188,13 @@ namespace MyWayAPP.Services
 
 
 
-        public async Task<bool> RegisterRoute(RoutteCar u)
+        public async Task<RoutteCar> RegisterRoute(RoutteCar u)
         {
             try
             {
                 JsonSerializerOptions options = new JsonSerializerOptions
                 {
+                    ReferenceHandler = ReferenceHandler.Preserve,
                     PropertyNameCaseInsensitive = true
                 };
                 string json = JsonSerializer.Serialize<RoutteCar>(u, options);
@@ -203,18 +204,18 @@ namespace MyWayAPP.Services
                 {
 
                     string jsonContent = await response.Content.ReadAsStringAsync();
-                    bool b = JsonSerializer.Deserialize<bool>(jsonContent, options);
+                    RoutteCar b = JsonSerializer.Deserialize<RoutteCar>(jsonContent, options);
                     return b;
                 }
                 else
                 {
-                    return false;
+                    return null;
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                return false;
+                return null;
             }
         }
 

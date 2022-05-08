@@ -39,6 +39,16 @@ namespace MyWayAPP.ViewModels
         }
         #endregion
 
+
+        public ICommand NevigateToCardView => new Command(Gotomap);
+        void Gotomap()
+        {
+            Page p = new CreditCardView();
+            App.Current.MainPage = p;
+
+        }
+
+
         public PresentCarViewModel()
         {
             App theApp = (App)App.Current;

@@ -2,20 +2,6 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyWayAPP.Views.PresentCar">
-    <ContentPage.Content>
-        <StackLayout >
-
-            <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Padding="20,15,0,0">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="Email:" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
-                        <Span Text="{Binding CarCurrentLocation}" TextColor="#2d2f31" FontSize="18"/>
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
-
-
-
-        </StackLayout>
-    </ContentPage.Content>
+    
+    <Button  Command="{Binding NevigateToCardView}" Grid.ColumnSpan="3"  VerticalOptions="End"  BackgroundColor="#bf0603" Text="Update" FontSize="15" TextColor="White"  CornerRadius="30"  Margin="16"  />
 </ContentPage>

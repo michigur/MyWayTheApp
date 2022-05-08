@@ -50,7 +50,19 @@ namespace MyWayAPP.ViewModels
             set
             {
                 this.carLocation = value;
-                OnPropertyChanged("carLocation");
+                OnPropertyChanged("CarLocation");
+            }
+        }
+
+
+         public int? carSeats;
+        public int? CarSeats
+        {
+            get => this.carSeats;
+            set
+            {
+                this.carSeats = value;
+                OnPropertyChanged("CarSeats");
             }
         }
 
@@ -134,9 +146,9 @@ namespace MyWayAPP.ViewModels
                     CarRoutteType = crt
                 };
 
-                bool isReturned = await proxy.RegisterRoute(u);
+                RoutteCar isReturned = await proxy.RegisterRoute(u);
 
-                if (isReturned == false)
+                if (isReturned == null)
                 {
                     await Application.Current.MainPage.DisplayAlert("Sign Up Failed!", "Invalid input", "OK");
 
@@ -167,6 +179,7 @@ namespace MyWayAPP.ViewModels
             if (currentUser != null)
             {
                 this.carLocation = currentUser.CarCurrentLocation;
+                this.carSeats = currentUser.CarNumSeats;
             }
 
         }
