@@ -9,7 +9,7 @@ namespace MyWayAPP.Models
     {
         public Client()
         {
-            RoutteCars = new HashSet<RoutteCar>();
+            RoutteCars = new List<RoutteCar>();
         }
 
         public int ClientId { get; set; }
@@ -21,10 +21,10 @@ namespace MyWayAPP.Models
         public string ClientsUsername { get; set; }
         public string ClientsPassword { get; set; }
         public string ClientCreditCardNumber { get; set; }
-        public DateTime? ClientCreditCardDate { get; set; }
+        public DateTime ClientCreditCardDate { get; set; }
         public int? ClientCreditCardCvv { get; set; }
         public string ClientCurrentLocation { get; set; }
 
-        public virtual ICollection<RoutteCar> RoutteCars { get; set; }
+        public virtual List<RoutteCar> RoutteCars { get; set; }
     }
 }

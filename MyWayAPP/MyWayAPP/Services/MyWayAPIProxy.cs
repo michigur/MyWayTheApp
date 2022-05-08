@@ -152,12 +152,13 @@ namespace MyWayAPP.Services
 
 
 
-        public async Task<bool> RegisterUser(Client u)
+        public async Task<Client> RegisterUser(Client u)
         {
             try
             {
                 JsonSerializerOptions options = new JsonSerializerOptions
                 {
+                     ReferenceHandler=ReferenceHandler.Preserve,
                     PropertyNameCaseInsensitive = true
                 };
                 string json = JsonSerializer.Serialize<Client>(u, options);
@@ -167,18 +168,19 @@ namespace MyWayAPP.Services
                 {
 
                     string jsonContent = await response.Content.ReadAsStringAsync();
-                    bool b = true; //JsonSerializer.Deserialize<bool>(jsonContent, options);
+                    
+                    Client b = JsonSerializer.Deserialize<Client>(jsonContent, options);
                     return b;
                 }
                 else
                 {
-                    return false;
+                    return null;
                 }
             }
             catch (Exception e) 
             {
                 Console.WriteLine(e.Message);
-                return false;
+                return null;
             }
         }
 

@@ -556,9 +556,9 @@ namespace MyWayAPP.ViewModels
                    
                 };
 
-                bool isReturned = await proxy.RegisterUser(u);
+                Client isReturned = await proxy.RegisterUser(u);
 
-                if (isReturned == false)
+                if (isReturned == null)
                 {
                     await Application.Current.MainPage.DisplayAlert("Sign Up Failed!", "Invalid input", "OK");
 

@@ -24,6 +24,7 @@ namespace MyWayAPP.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
+       
 
         CarRoutteType crt = new CarRoutteType()
         {  
@@ -159,7 +160,7 @@ namespace MyWayAPP.ViewModels
 
         public ShowMapViewModel()
         {
-
+           
             App theApp = (App)App.Current;
             Car currentUser = theApp.CurrentCar;
 
