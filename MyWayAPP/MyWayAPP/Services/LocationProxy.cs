@@ -11,15 +11,11 @@ namespace MyWayAPP.Services
     class LocationProxy
     {
 
-        private const string CLOUD_URL = "http://10.0.2.2:9380/mywayAPI"; //API url when going on the cloud
-        private const string CLOUD_PHOTOS_URL = "http://10.0.2.2:9380/Images/";
-        private const string DEV_ANDROID_EMULATOR_URL = "http://10.0.2.2:9380/mywayAPI"; //API url when using emulator on android
-        private const string DEV_ANDROID_PHYSICAL_URL = "http://192.168.1.14:9380/mywayAPI"; //API url when using physucal device on android
-        private const string DEV_WINDOWS_URL = "https://localhost:44312/mywayAPI"; //API url when using windoes on development
-        private const string DEV_ANDROID_EMULATOR_PHOTOS_URL = "http://10.0.2.2:9380/Images/"; //API url when using emulator on android
-        private const string DEV_ANDROID_PHYSICAL_PHOTOS_URL = "http://192.168.1.14:9380/Images/"; //API url when using physucal device on android
-        private const string DEV_WINDOWS_PHOTOS_URL = "https://localhost:44312/Images/"; //API url when using windoes on development
-
+        private const string CLOUD_URL = "http://10.0.2.2:9380/locations"; //API url when going on the cloud
+        private const string DEV_ANDROID_EMULATOR_URL = "http://10.0.2.2:9380/locations"; //API url when using emulator on android
+        private const string DEV_ANDROID_PHYSICAL_URL = "http://192.168.1.14:9380/locations"; //API url when using physucal device on android
+        private const string DEV_WINDOWS_URL = "https://localhost:44312/locations"; //API url when using windoes on development
+        
         private readonly HubConnection hubConnection;
         public LocationProxy()
         {
@@ -58,75 +54,50 @@ namespace MyWayAPP.Services
 
 
         //Connect gets a list of groups the user belongs to!
-        public async Task Connect(int? CarID)
+        public async Task Connect(int carID)
         {
             await hubConnection.StartAsync();
-            await hubConnection.InvokeAsync("OnConnect", CarID);
+            await hubConnection.InvokeAsync("OnConnect", carID);
         }
 
 
-        public async Task Disconnect(int? CarID)
+        public async Task Disconnect(int carID)
         {
-            await hubConnection.InvokeAsync("OnDisconnect", CarID);
+            await hubConnection.InvokeAsync("OnDisconnect", carID);
             await hubConnection.StopAsync();
 
         }
 
-
-        public async Task SendOnBoard(int CarID, int CLIENTId)
+        //This message is sent by the customer to the car, so the car can start driving
+        public async Task SendOnBoard(int carID, int clientId)
         {
-            await hubConnection.InvokeAsync("SendOnBoard", CarID, CLIENTId);
+            await hubConnection.InvokeAsync("SendOnBoard", carID, clientId);
         }
-        public async Task SendArriveToDestination(int CarID)
+
+        public async Task SendArriveToDestination(int carID)
         {
-            await hubConnection.InvokeAsync("SendArriveToDestination", CarID);
+            await hubConnection.InvokeAsync("SendArriveToDestination", carID);
         }
         public async Task SendLocation(int CarID, double longitude, double latitude)
         {
             await hubConnection.InvokeAsync("SendLocation", CarID, longitude, latitude);
         }
-        public async Task StartDrive(int CarID)
-        {
-            await hubConnection.InvokeAsync("StartDrive", CarID);
-        }
+        
 
-
-        public void RegisterToKidOnBoard(Action<int> UpdateOnBoard)
+        public void RegisterToUpdateOnBoard(Action<int> UpdateOnBoard)
         {
             hubConnection.On("UpdateOnBoard", UpdateOnBoard);
         }
 
-        public void RegisterToLocation(Action<double, double> UpdateLocation)
+        public void RegisterToupdateCarLocation(Action<double, double> UpdateLocation)
         {
             hubConnection.On("UpdateCarLocation", UpdateLocation);
         }
-        public void RegisterToArrive(Action UpdateArriveToDestination)
+        public void RegisterToArrive(Action<int> UpdateArriveToDestination)
         {
             hubConnection.On("UpdateArriveToDestination", UpdateArriveToDestination);
         }
-        public void RegisterToStartDrive(Action UpdateStartDrive)
-        {
-            hubConnection.On("UpdateStartDrive", UpdateStartDrive);
-        }
+        
 
-
-
-        //public async Task UpdateLocation(int? CarID, string latitude, string longitude)
-        //{
-
-        //    await hubConnection.InvokeAsync("UpdateDeliveryLocation", CarID, latitude, longitude);
-
-        //}
-
-        ////this method register a method to be called upon receiving a message
-        //public void RegisterToUpdateOrderStatus(Action<string, string> UpdateOrderStatus)
-        //{
-        //    hubConnection.On("UpdateOrderStatus", UpdateOrderStatus);
-        //}
-        ////this method register a method to be called upon receiving a message from specific group
-        //public void RegisterToUpdateDeliveryLocation(Action<string, string> UpdateDeliveryLocation)
-        //{
-        //    hubConnection.On("UpdateDeliveryLocation", UpdateDeliveryLocation);
-        //}
     }
 }

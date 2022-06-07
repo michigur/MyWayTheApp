@@ -102,6 +102,7 @@ namespace MyWayAPP.ViewModels
 
         public GooglePlace RouteOrigin { get; private set; }
         public GooglePlace RouteDestination { get; private set; }
+        public GooglePlace RouteCarLocation { get; private set; }
         public GoogleDirection RouteDirections { get; private set; }
 
         public ICommand Go => new Command(OnGo);
@@ -168,7 +169,7 @@ namespace MyWayAPP.ViewModels
             
         }
 
-
+        
 
         public ShowMapViewModel()
         {
@@ -197,7 +198,7 @@ namespace MyWayAPP.ViewModels
         void pay()
         {
 
-            Page p = new PresentCar();
+            Page p = new PresentCar(Origin, Destination);
             App.Current.MainPage = p;
 
         }
