@@ -1,7 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              x:Class="MyWayAPP.Views.PresentCar">
-    
-    <Button  Command="{Binding NevigateToCardView}" Grid.ColumnSpan="3"  VerticalOptions="End"  BackgroundColor="#bf0603" Text="Update" FontSize="15" TextColor="White"  CornerRadius="30"  Margin="16"  />
+
+   
+    <ContentPage.Content>
+
+
+
+        <StackLayout  BackgroundColor="#2d2f31">
+
+            <maps:Map  x:Name="myMap"  IsShowingUser="False" MapType="Hybrid"  />
+
+
+            <Button  Text="Ready To Go"  Grid.ColumnSpan="3"  VerticalOptions="End"  BackgroundColor="#003049"  FontSize="15" TextColor="White"  CornerRadius="30"  Margin="16"  />
+
+
+            <Button  Text="Ride Ended" Command="{Binding NevigateToCardView}" Grid.ColumnSpan="3"  VerticalOptions="End"  BackgroundColor="#bf0603"  FontSize="15" TextColor="White"  CornerRadius="30"  Margin="16"  />
+
+           
+        </StackLayout>
+
+
+
+
+
+    </ContentPage.Content>
+
+   
+  
 </ContentPage>
