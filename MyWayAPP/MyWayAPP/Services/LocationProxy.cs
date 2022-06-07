@@ -58,36 +58,75 @@ namespace MyWayAPP.Services
 
 
         //Connect gets a list of groups the user belongs to!
-        public async Task Connect(int? RouteID)
+        public async Task Connect(int? CarID)
         {
             await hubConnection.StartAsync();
-            await hubConnection.InvokeAsync("OnConnect", RouteID);
+            await hubConnection.InvokeAsync("OnConnect", CarID);
         }
 
 
-        public async Task Disconnect(int? RouteID)
+        public async Task Disconnect(int? CarID)
         {
-            await hubConnection.InvokeAsync("OnDisconnect", RouteID);
+            await hubConnection.InvokeAsync("OnDisconnect", CarID);
             await hubConnection.StopAsync();
 
         }
 
-        public async Task UpdateLocation(int? CarID, string latitude, string longitude)
+
+        public async Task SendOnBoard(int CarID, int CLIENTId)
         {
-
-            await hubConnection.InvokeAsync("UpdateDeliveryLocation", CarID, latitude, longitude);
-
+            await hubConnection.InvokeAsync("SendOnBoard", CarID, CLIENTId);
+        }
+        public async Task SendArriveToDestination(int CarID)
+        {
+            await hubConnection.InvokeAsync("SendArriveToDestination", CarID);
+        }
+        public async Task SendLocation(int CarID, double longitude, double latitude)
+        {
+            await hubConnection.InvokeAsync("SendLocation", CarID, longitude, latitude);
+        }
+        public async Task StartDrive(int CarID)
+        {
+            await hubConnection.InvokeAsync("StartDrive", CarID);
         }
 
-        //this method register a method to be called upon receiving a message
-        public void RegisterToUpdateOrderStatus(Action<string, string> UpdateOrderStatus)
+
+        public void RegisterToKidOnBoard(Action<int> UpdateOnBoard)
         {
-            hubConnection.On("UpdateOrderStatus", UpdateOrderStatus);
+            hubConnection.On("UpdateOnBoard", UpdateOnBoard);
         }
-        //this method register a method to be called upon receiving a message from specific group
-        public void RegisterToUpdateDeliveryLocation(Action<string, string> UpdateDeliveryLocation)
+
+        public void RegisterToLocation(Action<double, double> UpdateLocation)
         {
-            hubConnection.On("UpdateDeliveryLocation", UpdateDeliveryLocation);
+            hubConnection.On("UpdateCarLocation", UpdateLocation);
         }
+        public void RegisterToArrive(Action UpdateArriveToDestination)
+        {
+            hubConnection.On("UpdateArriveToDestination", UpdateArriveToDestination);
+        }
+        public void RegisterToStartDrive(Action UpdateStartDrive)
+        {
+            hubConnection.On("UpdateStartDrive", UpdateStartDrive);
+        }
+
+
+
+        //public async Task UpdateLocation(int? CarID, string latitude, string longitude)
+        //{
+
+        //    await hubConnection.InvokeAsync("UpdateDeliveryLocation", CarID, latitude, longitude);
+
+        //}
+
+        ////this method register a method to be called upon receiving a message
+        //public void RegisterToUpdateOrderStatus(Action<string, string> UpdateOrderStatus)
+        //{
+        //    hubConnection.On("UpdateOrderStatus", UpdateOrderStatus);
+        //}
+        ////this method register a method to be called upon receiving a message from specific group
+        //public void RegisterToUpdateDeliveryLocation(Action<string, string> UpdateDeliveryLocation)
+        //{
+        //    hubConnection.On("UpdateDeliveryLocation", UpdateDeliveryLocation);
+        //}
     }
 }
