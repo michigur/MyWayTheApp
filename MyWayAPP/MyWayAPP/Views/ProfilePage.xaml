@@ -3,11 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyWayAPP.Views.ProfilePage"
              xmlns:local="clr-namespace:MyWayAPP.Views"
-              NavigationPage.HasNavigationBar="false">
+              NavigationPage.HasNavigationBar="True">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="MyWay" 
+                     IconImageSource="carHatchback.png"
+                     Order="Primary"
+                     Command="{Binding ShowMap}"/>
+        <ToolbarItem Text="LogOut" 
+                     IconImageSource="logout.png"
+                     Order="Primary"
+                     Command="{Binding Logout}"/>
 
-    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+    </ContentPage.ToolbarItems>
+   
         <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#2d2f31">
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#2d2f31" >
 
 
 
@@ -18,11 +29,11 @@
 
 
 
-                <Image Source="logoClean.png"  Margin="0,65,0,0"/>
-                <Frame  HasShadow="False" CornerRadius="40" Margin="0,-240,0,0" VerticalOptions="FillAndExpand" BackgroundColor="#dddddd">
+                <Image Source="logoClean.png"  Margin="0,30,0,0"/>
+                <Frame  HasShadow="False" CornerRadius="40" Margin="0,-245,0,0" VerticalOptions="FillAndExpand" BackgroundColor="#dddddd">
                     <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,*,*">
                         <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Text="{Binding FName}"  FontSize="35" FontAttributes="Bold" Padding="20,10,0,0"/>
-                        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Padding="20,40,0,0">
+                        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Padding="20,20,0,0">
                             <Label.FormattedText>
                                 <FormattedString>
                                     <Span Text="User Name:" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
@@ -69,72 +80,5 @@
         </Grid>
 
 
-        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-
-            <Grid x:Name="MainMenuView" ColumnDefinitions="Auto, *" BackgroundColor="#2d2f31" HeightRequest="420" 
-              VerticalOptions="Start" AnchorX="0.08" AnchorY="0.08" Rotation="-90">
-                <Grid AnchorX="0.08" AnchorY="0.08" Rotation="90">
-                    <StackLayout Orientation="Horizontal" Spacing="20">
-                        <ImageButton Source="menu.png" BackgroundColor="Transparent" WidthRequest="20" HeightRequest="20" 
-                            VerticalOptions="Start" HorizontalOptions="Center" Margin="0,5,0,0" Clicked="ShowMenu"/>
-                        <Label x:Name="TitleTxt" Text="ACTIVITY" TextColor="White" FontSize="22" FontAttributes="Bold" 
-                        HorizontalOptions="Center" VerticalOptions="Start"/>
-                    </StackLayout>
-                </Grid>
-                <Grid x:Name="MenuItemsView" Grid.Column="1" HorizontalOptions="FillAndExpand" TranslationX="-50" Opacity="0">
-
-
-                    <StackLayout Orientation="Horizontal" Spacing="10" Margin="0,70,0,0">
-                        <!-- <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="GoToPage"/>
-                                </StackLayout.GestureRecognizers>
-                                <Image Source="{Binding Icon}" WidthRequest="20" HeightRequest="20" 
-                                    VerticalOptions="Center" HorizontalOptions="Start"/>
-                                <Label Text="{Binding Title}" TextColor="White" FontSize="22" FontAttributes="Bold" 
-                                    HorizontalOptions="Start" VerticalOptions="Center"/>
-                                -->
-                        <Grid RowDefinitions="8" ColumnDefinitions="5">
-                            <Image Source="accountOutline.png" Grid.Row="1" Grid.Column="1" WidthRequest="30" HeightRequest="30" 
-                                    VerticalOptions="Center" HorizontalOptions="Start"/>
-                            <Button Text="Profile" Clicked="Button_Clicked1" TextColor="White" FontSize="22" FontAttributes="Bold" 
-                                    HorizontalOptions="End" VerticalOptions="Center" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="4" BackgroundColor="Transparent" />
-
-
-                            <Image Source="carHatchback.png" Grid.Row="2" Grid.Column="1" WidthRequest="30" HeightRequest="30" 
-                                    VerticalOptions="Center" HorizontalOptions="Start"/>
-                            <Button Text="MY WAY" Command="{Binding ShowMap}" TextColor="White" FontSize="22" FontAttributes="Bold" 
-                                    HorizontalOptions="End" VerticalOptions="Center" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="4" BackgroundColor="Transparent" />
-
-                            <Image Source="logout.png" Grid.Row="3" Grid.Column="1" WidthRequest="30" HeightRequest="30" 
-                                    VerticalOptions="Center" HorizontalOptions="Start"/>
-                            <Button Text="LogOut" Command="{Binding Logout}" TextColor="White" FontSize="22" FontAttributes="Bold" 
-                                    HorizontalOptions="End" VerticalOptions="Center" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="4" BackgroundColor="Transparent" />
-
-
-                            <Button Text="LogOut" TextColor="Transparent" FontSize="20" FontAttributes="Bold" 
-                                    HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="3" BackgroundColor="Transparent" />
-                            <Button Text="LogOut" TextColor="Transparent" FontSize="20" FontAttributes="Bold" 
-                                    HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="3" BackgroundColor="Transparent" />
-                            <Button Text="LogOut" TextColor="Transparent" FontSize="20" FontAttributes="Bold" 
-                                    HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="3" BackgroundColor="Transparent" />
-                            <Button Text="LogOut" TextColor="Transparent" FontSize="20" FontAttributes="Bold" 
-                                    HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="3" BackgroundColor="Transparent" />
-
-                        </Grid>
-
-
-                    </StackLayout>
-
-
-                    <StackLayout Margin="0,220,45,0">
-                        <Image Source="logoClean.png" />
-                    </StackLayout>
-                </Grid>
-
-            </Grid>
-
-
-        </Grid>
-
-    </Grid>
+      
 </ContentPage>

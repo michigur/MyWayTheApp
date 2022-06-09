@@ -14,7 +14,7 @@
             <maps:Map  x:Name="myMap"  IsShowingUser="False" MapType="Hybrid"  />
 
 
-            <Button  Text="Ready To Go"  Grid.ColumnSpan="3"  VerticalOptions="End"  BackgroundColor="#003049"  FontSize="15" TextColor="White"  CornerRadius="30"  Margin="16"  />
+            <Button  Text="Ready To Go"  Grid.ColumnSpan="3" Command="{Binding InCar}"  VerticalOptions="End"  BackgroundColor="#003049"  FontSize="15" TextColor="White"  CornerRadius="30"  Margin="16"  />
 
 
             <Button  Text="Ride Ended" Command="{Binding NevigateToCardView}" Grid.ColumnSpan="3"  VerticalOptions="End"  BackgroundColor="#bf0603"  FontSize="15" TextColor="White"  CornerRadius="30"  Margin="16"  />

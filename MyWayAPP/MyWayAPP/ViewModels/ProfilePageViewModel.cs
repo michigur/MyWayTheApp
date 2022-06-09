@@ -134,7 +134,8 @@ namespace MyWayAPP.ViewModels
         {
 
             Page p = new ShowMap();
-            App.Current.MainPage = p;
+            App.Current.MainPage = new NavigationPage(p);
+
 
         }
 
@@ -145,7 +146,8 @@ namespace MyWayAPP.ViewModels
             App theApp = (App)Application.Current;
             theApp.CurrentUser = null;
             Page p = new LandingPage();
-            App.Current.MainPage = p;
+            App.Current.MainPage = new NavigationPage(p);
+
 
         }
 

@@ -124,14 +124,13 @@ namespace MyWayAPP.Services
             {
                 JsonSerializerOptions options = new JsonSerializerOptions
                 {
-                    ReferenceHandler = ReferenceHandler.Preserve,
-                    Encoder = JavaScriptEncoder.Create(UnicodeRanges.Hebrew, UnicodeRanges.BasicLatin),
+                    ReferenceHandler = ReferenceHandler.Preserve, //avoid reference loops!
                     PropertyNameCaseInsensitive = true
                 };
                 string jsonObject = JsonSerializer.Serialize<Client>(user, options);
                 StringContent content = new StringContent(jsonObject, Encoding.UTF8, "application/json");
 
-                HttpResponseMessage response = await this.client.PostAsync($"{this.baseUri}/SignUp", content);
+                HttpResponseMessage response = await this.client.PostAsync($"{this.baseUri}/UpdateUser", content);
                 if (response.IsSuccessStatusCode)
                 {
                     jsonObject = await response.Content.ReadAsStringAsync();

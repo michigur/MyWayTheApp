@@ -26,6 +26,14 @@ namespace MyWayAPP.ViewModels
         }
         #endregion
 
+
+        private string origin;
+
+        private string destination;
+
+        private string carLocation;
+
+
         //define event to update car location on the map
         public event Action<double, double> CarLocationEvent;
         //define connecgtion to hub
@@ -42,11 +50,17 @@ namespace MyWayAPP.ViewModels
             }
         }
         #endregion
+        public ICommand InCar => new Command(IsinCar);
+        void IsinCar()
+        {
+            SendOnBoard();
 
+        }
 
         public ICommand NevigateToCardView => new Command(Gotomap);
         void Gotomap()
         {
+            SendArriveToDestination();
             Page p = new CreditCardView();
             App.Current.MainPage = p;
 
@@ -61,7 +75,9 @@ namespace MyWayAPP.ViewModels
             hubProxy = new LocationProxy();
             ConnectToProxy();
             hubProxy.RegisterToupdateCarLocation(SetCarLocation);
-            
+            this.carLocation = currentCar.CarCurrentLocation;
+
+            OnGo();
 
         }
 
@@ -87,6 +103,73 @@ namespace MyWayAPP.ViewModels
             await hubProxy.Disconnect(currentCar.CarId);
 
         }
+
+       
+
+        public GooglePlace RouteOrigin { get; private set; }
+        public GooglePlace RouteDestination { get; private set; }
+        public GooglePlace RouteCarLocation { get; private set; }
+        public GoogleDirection ClientRouteDirections { get; private set; }
+        public GoogleDirection CarRouteDirections { get; private set; }
+
+        public event Action OnUpdateMapEvent;
+
+       
+        public async void OnGo()
+        {
+            try
+            {
+               
+
+                GoogleMapsApiService service = new GoogleMapsApiService();
+
+                GooglePlaceAutoCompleteResult originPlaces = await service.GetPlaces(origin);
+                GooglePlaceAutoCompleteResult destPlaces = await service.GetPlaces(destination);
+                GooglePlaceAutoCompleteResult carPlace = await service.GetPlaces(carLocation);
+                //extract the exact first google place for origin and destination
+
+                GooglePlace place1 = await service.GetPlaceDetails(originPlaces.AutoCompletePlaces[0].PlaceId);
+                GooglePlace place2 = await service.GetPlaceDetails(destPlaces.AutoCompletePlaces[0].PlaceId);
+                GooglePlace place3 = await service.GetPlaceDetails(carPlace.AutoCompletePlaces[0].PlaceId);
+                //get directions to move from origin to destination
+                GoogleDirection Clientdirection = await service.GetDirections($"{place1.Latitude}", $"{place1.Longitude}", $"{place2.Latitude}", $"{place2.Longitude}");
+                GoogleDirection Cardirection = await service.GetDirections($"{place3.Latitude}", $"{place3.Longitude}", $"{place1.Latitude}", $"{place1.Longitude}");
+                //update the properties so the main page class will have access to the information and fire the event to update the map
+                RouteOrigin = place1;
+                RouteDestination = place2;
+                RouteCarLocation = place3;
+                ClientRouteDirections = Clientdirection;
+                CarRouteDirections = Cardirection;
+                if (OnUpdateMapEvent != null)
+                    OnUpdateMapEvent();
+
+
+                App theApp = (App)App.Current;
+
+              
+
+                
+
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("cant find route");
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }

@@ -19,7 +19,7 @@ namespace MyWayAPP.Views
 
 
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ShowMap : ContentPage
+    public partial class ShowMap : ContentPage 
     {
         public ShowMap()
         {
@@ -138,17 +138,17 @@ namespace MyWayAPP.Views
         //}
 
 
-        //private void Button_Clicked(object sender, EventArgs e)
-        //{
-        //    ContentPage p = new LandingPage();
-        //    Navigation.PushAsync(p);
-        //}
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            ContentPage p = new LandingPage();
+            Navigation.PushAsync(p);
+        }
 
-        //private void Button_Clicked1(object sender, EventArgs e)
-        //{
-        //    ContentPage p = new ProfilePage();
-        //    Navigation.PushAsync(p);
-        //}
+        private void Button_Clicked1(object sender, EventArgs e)
+        {
+            ContentPage p = new ProfilePage();
+            Navigation.PushAsync(p);
+        }
 
         //private void Button_Clicked2(object sender, EventArgs e)
         //{

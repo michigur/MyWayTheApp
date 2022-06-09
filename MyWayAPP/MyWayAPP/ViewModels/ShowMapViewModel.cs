@@ -203,15 +203,22 @@ namespace MyWayAPP.ViewModels
 
         }
 
+        //public ICommand Profile => new Command(profile);
+        //void profile()
+        //{
+
+        //    Page p = new ProfilePage();
+        //    App.Current.MainPage = p;
+
+        //}
         public ICommand Profile => new Command(profile);
         void profile()
         {
 
             Page p = new ProfilePage();
-            App.Current.MainPage = p;
+            App.Current.MainPage = new NavigationPage(p);
 
         }
-
 
         public ICommand Logout => new Command(logout);
         void logout()
@@ -219,7 +226,7 @@ namespace MyWayAPP.ViewModels
             App theApp = (App)Application.Current;
             theApp.CurrentUser = null;
             Page p = new LandingPage();
-            App.Current.MainPage = p;
+            App.Current.MainPage = new NavigationPage(p);
 
         }
 
