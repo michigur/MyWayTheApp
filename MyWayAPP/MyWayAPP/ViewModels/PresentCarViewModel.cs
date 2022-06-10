@@ -53,14 +53,13 @@ namespace MyWayAPP.ViewModels
         public ICommand InCar => new Command(IsinCar);
         void IsinCar()
         {
-            SendOnBoard();
-
+            Application.Current.MainPage.DisplayAlert("Have a nice ride!", "when you have arrived at your destination please confirm so in the 'Ride Ended' button","OK" );
         }
 
         public ICommand NevigateToCardView => new Command(Gotomap);
         void Gotomap()
         {
-            SendArriveToDestination();
+            //SendArriveToDestination();
             Page p = new CreditCardView();
             App.Current.MainPage = p;
 
@@ -76,8 +75,8 @@ namespace MyWayAPP.ViewModels
             //ConnectToProxy();
             hubProxy.RegisterToupdateCarLocation(SetCarLocation);
             this.carLocation = currentCar.CarCurrentLocation;
-            this.origin = "Kefar Sava";
-            this.destination = "Raanana";
+            this.origin = Origin;
+            this.destination = Destination;
             OnGo();
 
         }

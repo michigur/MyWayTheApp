@@ -33,6 +33,12 @@ namespace MyWayAPP
         public List<Car> Cars { get; set; }
 
         public Car CurrentCar { get; set; }
+
+       public string Origin { get; set; }
+
+        public string Destenation { get; set; }
+
+
         public App()
         {
             InitializeComponent();

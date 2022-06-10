@@ -135,19 +135,10 @@
                          Grid.ColumnSpan="3"
                          Padding="18"
                          TextColor="White"
-                         Margin="30,0,30,30"/>
-
-            <Button Text="Back to Route Page"
-                         BackgroundColor="#669bbc"
-                         CornerRadius="26"
-                         FontSize="18"
-                         Grid.Row="7"
-                         Grid.Column="0"
-                         Grid.ColumnSpan="3"
-                         Padding="18"
-                         TextColor="White"
                          Margin="30,0,30,30"
-                    Command="{Binding gotomap}"/>
+                     Command="{Binding gotomap}"/>
+
+           
         </Grid>
     </ScrollView>
 </ContentPage>

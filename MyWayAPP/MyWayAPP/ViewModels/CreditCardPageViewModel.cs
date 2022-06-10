@@ -30,8 +30,12 @@ namespace MyWayAPP.ViewModels
         public ICommand gotomap => new Command(Gotomap);
         void Gotomap()
         {
+
+            Application.Current.MainPage.DisplayAlert("Purchase successful!", "thank you for choosing MyWay ;)", "OK");
+
             Page p = new ShowMap();
-            App.Current.MainPage = p;
+            App.Current.MainPage = new NavigationPage(p);
+
 
         }
 

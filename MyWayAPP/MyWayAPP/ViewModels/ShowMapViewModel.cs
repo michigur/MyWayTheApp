@@ -132,6 +132,10 @@ namespace MyWayAPP.ViewModels
 
                 App theApp = (App)App.Current;
 
+                theApp.Origin = this.origin;
+                theApp.Destenation = this.destination;
+
+
                 MyWayAPIProxy proxy = MyWayAPIProxy.CreateProxy();
                 RoutteCar u = new RoutteCar
                 {
@@ -181,6 +185,9 @@ namespace MyWayAPP.ViewModels
             {
                 this.carLocation = currentUser.CarCurrentLocation;
                 this.carSeats = currentUser.CarNumSeats;
+                this.drivePrice = "25 New Shekels";
+                this.origin = theApp.Origin;
+                this.destination = theApp.Destenation;
             }
 
         }
@@ -198,7 +205,7 @@ namespace MyWayAPP.ViewModels
         void pay()
         {
 
-            Page p = new PresentCar(Origin, Destination);
+            Page p = new PresentCar(origin, destination);
             App.Current.MainPage = p;
 
         }
