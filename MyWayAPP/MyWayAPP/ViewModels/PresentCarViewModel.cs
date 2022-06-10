@@ -67,16 +67,17 @@ namespace MyWayAPP.ViewModels
         }
         private Client currentUser;
         private Car currentCar;
-        public PresentCarViewModel()
+        public PresentCarViewModel(string Origin , string Destination)
         {
             App theApp = (App)App.Current;
             this.currentCar = theApp.CurrentCar;
             this.currentUser = theApp.CurrentUser;
             hubProxy = new LocationProxy();
-            ConnectToProxy();
+            //ConnectToProxy();
             hubProxy.RegisterToupdateCarLocation(SetCarLocation);
             this.carLocation = currentCar.CarCurrentLocation;
-
+            this.origin = "Kefar Sava";
+            this.destination = "Raanana";
             OnGo();
 
         }
@@ -146,9 +147,9 @@ namespace MyWayAPP.ViewModels
 
                 App theApp = (App)App.Current;
 
-              
 
-                
+
+               // ConnectToProxy();
 
 
             }

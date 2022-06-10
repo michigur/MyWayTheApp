@@ -125,7 +125,7 @@ namespace MyWayAPP.ViewModels
         {
 
             Page p = new Update();
-            App.Current.MainPage = p;
+            App.Current.MainPage = new NavigationPage(p);
         }
 
 

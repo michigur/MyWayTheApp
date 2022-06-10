@@ -27,7 +27,7 @@ namespace MyWayAPP.Views
 
         public PresentCar(string Origin, string Destination)
         {
-            PresentCarViewModel vm = new PresentCarViewModel();
+            PresentCarViewModel vm = new PresentCarViewModel(Origin,Destination);
             vm.CarLocationEvent += OncarLocationUpdate;
             vm.OnUpdateMapEvent += OnUpdateMap;
             this.BindingContext = vm;

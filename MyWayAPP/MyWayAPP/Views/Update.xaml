@@ -2,11 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyWayAPP.Views.Update"
-              NavigationPage.HasNavigationBar="True" >
+              NavigationPage.HasNavigationBar="True"
+             NavigationPage.HasBackButton="True">
     <ContentPage.Content>
         <StackLayout  BackgroundColor="#2d2f31">
 
-            <Frame  HasShadow="False" CornerRadius="40" Margin="0,100,0,0" VerticalOptions="FillAndExpand" BackgroundColor="#dddddd">
+            <Frame  HasShadow="False" CornerRadius="40" Margin="0,80,0,0" VerticalOptions="FillAndExpand" BackgroundColor="#dddddd">
                 <StackLayout>
                
                 <!-- Email-->
@@ -96,7 +97,7 @@
 
 
 
-                    <Button Padding="0" Grid.Column="2" Text="Save Changes" HorizontalOptions="Start"  VerticalOptions="Center"  BackgroundColor="#669bbc"  FontSize="15" TextColor="White"  CornerRadius="30"  Margin="16"  Command="{Binding SaveDataCommand}"/>
+                    <Button Padding="0" Grid.Column="2" Grid.ColumnSpan="3" Text="Save Changes" HorizontalOptions="Start"  VerticalOptions="Center"  BackgroundColor="#669bbc"  FontSize="15" TextColor="White"  CornerRadius="30"  Margin="16"  Command="{Binding SaveDataCommand}"/>
                     
                 
             </StackLayout>
